@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE> Matlab code for the product of matrix times vector </TITLE>
+ 
+</HEAD>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" link="fff999" vlink="#DEDEDE">
+
+
+<H2> <a href="index.html"> Mathematics 726 </a></H2>
+<H3>  Example for the matrix times vector product: </H3>
+
+<HR>
+
+<pre>
+function y = matvect(A,x);
+% This is a MatLab function to compute product of a matrix A
+% and a vector x.  
+% By Ralph Howard on 1/15/98
+% Call syntax: y = matvect(a,b) or matvect(a,b)
+% Input: The matrix A and the vector x
+% Output: The product Ax
+m=size(A,1);			% m = number of rows of A
+n=size(A,2);			% n = number of columns of A
+c=linspace(0,0,m)';		% column vector of n 0's
+for i=1:m			% start the loop for i
+	for j=1:n			% start the loop for j
+		c(i)=c(i)+A(i,j)*x(j);	% update the i-th entry
+	end;				% end j loop
+end;					% end i loop
+ans = c			% Value of A*v is printed at end of loop
+
+</pre>
+
+<HR>
+<FONT SIZE=+2> <STRONG>  Remarks:</STRONG> </FONT> <FONT
+COLOR="#000000">-</FONT> 
+<ol>
+<li>In my first version of this program I used
+<tt> y </tt> rather than <tt> c </tt> for the variable in the loop.
+MatLab did not like this as <tt> y </tt> had been reserved as the name
+of the function in the first line of the program.  The result was that
+the answer was printed twice rather than just once.  Thus if you have
+trouble with getting more output than you should, one possibility is
+that a variable reserved for the function name in the first line of
+the program has been used.
+<li> The commands <tt> size(A,1)</tt> and <tt>size(A,2)</tt> give the
+number of rows and columns of a matrix.  For more information see
+<a href="matinfo.html"> getting information about matrices</a>.
+<li> In this program the column zero vector of length <i>m</i> was 
+defined by <tt> c=linspace(0,0,m)'</tt>.  There are other ways to
+define this vector.  For example <tt> c=zeros(m,1)</tt>.  For more
+information on this see <a href="special.html"> defining special
+matrices</a>.
+<HR>
+
+
+
+
+<center> <A href="http://www.math.sc.edu/~howard/"> Home </A>
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE> Matlab code making special vectors and matrices </TITLE>
+ 
+</HEAD>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" link="fff999" vlink="#DEDEDE">
+
+
+<H2> <a href="index.html"> Mathematics 726 </a></H2>
+<H3>  Making special vectors and matrices </H3>
+
+We will need to be able to define vectors, such as the zero vector, of
+size <i>n</i>.  Here are some examples:
+<hr>
+<pre>
+zeros(m,1)	  % column vector of zeros of length m
+zeros(1,n)	  % row vector of zeros of length n
+
+ones(m,1)	  % column vector of ones of length m
+ones(1,n)	  % zero row vector of ones of length n
+
+linspace(a,b,n)	  % row vector of n equally spaced numbers from a to b
+linspace(a,b,n)'  % column vector of n equally spaced numbers from a to b
+ 
+linspace(0,0,n)	  % row vector of zeros of length n
+linspace(0,0,m)'  % column vector of zeros of length m
+
+</pre>
+<hr>
+
+Here are examples of how to form matrices, such as the zero matrix,
+which are used on a regular basis:
+
+<HR>
+
+<pre>
+zeros(n)	  % n x n matrix of zeros
+zeros(m,n)	  % m x n matrix of zeros
+zeros(size(A))	  % matrix of zeros the same size as A
+
+ones(n)		  % n x n matrix of ones
+ones(m,n)	  % m x n matrix of ones
+ones(size(A))	  % matrix of ones the same size as A
+
+eye(n)		  % n x n identity matrix
+eye(m,n)	  % m x n identity matrix
+eye(size(A))	  % identity matrix the same size as A
+</pre>
+
+<HR>
+
+<center> <A href="http://www.math.sc.edu/~howard/"> Home </A>
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+

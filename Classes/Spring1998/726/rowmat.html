@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE> Matlab code for the matrix product </TITLE>
+ 
+</HEAD>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" link="fff999" vlink="#DEDEDE">
+
+
+<H2> <a href="index.html"> Mathematics 726 </a></H2>
+<H3>  Example for matrix product as linear combination of rows  </H3>
+<H3> By Li Chong<H3>
+
+<HR>
+
+<pre>
+% FILE: rowmat.m   (Ma726)
+% PROVIDES: MatLab function rowmat(A, B) to compute 
+%           product of matrix A and matrix B by using
+%           linear combination of rows of B.
+%
+% Homework Ma726 
+% Author: Chong Li 
+% Date:   Jan. 23, 1998
+%
+% Input:  A = m by p matrix
+%         B = p by n matrix
+% Output: Matrix product AB
+%
+% Call syntax:  C = rowmat(A,B) or rowmat(A,B)
+% Precondition: Number of columns of A is equal to
+%               number of rows of B.
+
+ function C = rowmat(A,B);
+
+ [m,p] = size(A); 
+ [q,n] = size(B);  
+
+ if p ~= q
+    disp('Error: Matrix sizes do not match. ');
+ else
+    C = zeros(m,n);
+    for i=1:m
+        for k=1:p
+            C(i,:) = C(i,:) + A(i,k)*B(k,:); % Linear combination of rows of B. 
+        end
+    end
+ end
+
+% NOTE: if using ans = C, then get ans twice.
+% EOF
+</pre>
+
+<HR>
+
+<center> <A href="http://www.math.sc.edu/~howard/"> Home </A>
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+

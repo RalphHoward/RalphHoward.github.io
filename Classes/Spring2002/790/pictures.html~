@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Template importing pictures.</TITLE>
+ 
+</HEAD>
+<BODY>
+
+
+<H1>Template for the AMS artcle style.</H1>
+
+<HR>
+
+<pre>
+%%
+%% This is LaTeX2e input.
+%%
+
+\documentclass{amsart}
+
+%%
+%% The following is commands are used for importing various types of
+%% grapics.
+%% 
+
+\usepackage{epsfig}            % For postscript
+
+
+
+\begin{document}
+
+\mbox{\psfig{file=tube.eps,width=2in}}
+
+\end{document}
+
+
+</pre> 
+
+
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+

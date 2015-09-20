@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE> Matlab code for the matrix product </TITLE>
+ 
+</HEAD>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" link="fff999" vlink="#DEDEDE">
+
+
+<H2> <a href="index.html"> Mathematics 726 </a></H2>
+<H3>  Example for matrix product from the definition </H3>
+<H3> By Keith Morris<H3>
+
+<HR>
+
+<pre>
+function y = mat(A,B)
+%  Keith Morris
+%  Jan 23 1998
+%  This program takes 2 matrices and multiplies them together.
+%  The input varaibles are A and B
+%  The ouput variable is c defined to be A*B
+%  This also has an error message to handle matrices that
+%  dimensions do not agree
+
+m= size(A,1);	% gets the row size of matrix A
+p= size(A,2);	% gets the column size of Matrix A
+n= size(B,2);	% gets the column size of Matrix B
+f= size(B,1);   % gets the row size of matrix B
+
+if f==p
+c=zeros(m,n);	% initializes the variable c
+
+for i=1:m	% starts the loop
+	for j=1:n	% starts the loop
+		for k=1:p	% starts the loop
+			c(i,j)=c(i,j) + A(i,k) * B(k,j);    % updates c
+		end	% ends loop
+	end	% ends loop
+end	% ends loop
+
+ans = c	% prints our final answer c
+else
+	error('The dimensions of the matrices must agree')
+end
+</pre>
+
+<HR>
+
+<center> <A href="http://www.math.sc.edu/~howard/"> Home </A>
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+

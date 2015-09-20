@@ -1,0 +1,57 @@
+<HEAD>
+<TITLE> Mathematics 723: Advanced Differential Equations</TITLE>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" link="fff999" vlink="999999">
+<BODY BACKGROUND=>
+
+ <TABLE BORDER=0>
+<TR><TD><TR><TD> <IMG SRC="logo.gif"> <TD> <H1> Mathematics 723 </H1>
+	<H2>Advanced Differential Equations</H2>
+	<H2> Spring 1997</H2>
+</TABLE> 
+
+
+
+</HEAD>
+<BODY>
+<HR>
+
+
+<H2>Class Notes and Homework:</H2>  
+
+<UL> <LI> <A
+HREF="http://www.math.sc.edu/~howard/Notes/gronwall.dvi">The Gronwall
+Inequality.</A> 
+A version of the Gronwall inequality that estimates the difference
+between solutions to two differential equations in terms of the
+difference between their initial conditions and how how much the two
+equations differ.
+</UL>
+
+<UL> <LI> <A HREF="examples.dvi">Examples and problems relating to the
+general existence theorem and Gronwall's Inequality</A>.</UL>
+
+
+<UL> <LI> <A HREF="http://www.math.sc.edu/~howard/Notes/inverse.dvi">
+The inverse function theorem</A>.  A proof, in the from of exercises
+with detailed hints, of the classical inverse function and the inverse
+function theorem for Lipschitz maps between Banach spaces.
+</UL>
+
+<UL> <LI> <A HREF="http://www.math.sc.edu/~howard/Notes/inverse.dvi"> 
+The inverse function theorem</A>.
+</UL>
+
+<UL> <LI> <A HREF="g-h.dvi">A Special case of the Grobman-Hartman
+Theorem</A>.
+</UL>
+
+<hr>
+
+<center>
+<A HREF="http://www.math.sc.edu/~howard/"> Home.</A>
+</center>
+
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE> Mathematics 527, Spring 2002</TITLE>
+ 
+</HEAD>
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" link="fff999" vlink="#DEDEDE">
+
+<IMG SRC="logo.jpg" ALIGN = RIGHT >
+<H1> Mathematics 790</H1>
+<H2> Graduate Seminar</H2>
+<H2> Spring 2002 </H2>
+<H2> Wed  3:35-4:25pm <a
+   href="http://web.csd.sc.edu/uscmap/bldg/leconte.html">LC</a>  
+   <a
+   href="http://web.csd.sc.edu/cgi-bin/uscmap/uscmap.cgi?type=deptno&data=COSM012">310</a>  </H2>
+<HR>
+
+
+<DL>
+<DT><strong><FONT COLOR="#FFCD39">  Instructor: </FONT> </strong><BR>
+<DD> <a href="http://www.math.sc.edu/~howard/"> <strong> Ralph Howard </strong></a>
+   <UL> <LI > <strong>Office:</strong> <a
+   href="http://web.csd.sc.edu/uscmap/bldg/leconte.html">LC</a>  
+   <a
+   href="http://web.csd.sc.edu/cgi-bin/uscmap/uscmap.cgi?type=deptno&data=COSM012">304</a> 
+        <LI><strong> Phone: </strong> 777-2913
+	<LI><strong> E-mail:</strong> <A
+	HREF="mailto:howard@math.sc.edu"><TT>howard@math.sc.edu</TT></A>
+	<LI>  <strong>Office Hours:</strong> TTh 10:00-11:00am W 2:00-3:00
+       </UL>
+</DL>
+
+<ul>
+<li> <a href="http://www.math.sc.edu/~howard/latex2e.html">A summary
+of LaTeX commands.</a>
+<li> <a href="latex_guide.pdf">The Not So Short Introduction to
+L<sup>A</sup>T
+<sub>E</sub>X2e</a> (87 pages)
+<li> <a href="latex.pdf">A Simplified Introduction to L<sup>A</sup>T
+<sub>E</sub>X</a</a> (136 pages)
+<li> <a href="quadratic.html">An example of a short LaTeX document.</a>
+<li><a href="amsart.html">Template for the AMS article style.</a>
+<li> <a href="hw5.pdf">Arrays and macros.</a>
+<li> <a href="pictures.html">Templete for importing postscript figures.</a>
+</ul>
+
+
+
+
+
+
+
+<center> <A href="http://www.math.sc.edu/~howard/"> Home </A>
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+

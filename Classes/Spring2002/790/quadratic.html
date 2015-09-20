@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>A LaTeX Example.</TITLE>
+ 
+</HEAD>
+<BODY>
+
+
+<H1>An Example of a Short LaTeX Document.</H1>
+
+<HR>
+
+<pre>
+%%
+%% This is LaTeX2e input.
+%%
+
+\documentclass[11pt]{amsart}
+
+%%%%
+%%%% The next few commands set up the theorem type environments.
+%%%% 
+%%%%
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+
+%%
+%% If some other type is need, say conjectures, then it is constructed
+%% by editing and uncommenting the following.
+%%
+
+%\newtheorem{conj}[thm]{Conjecture} 
+
+
+%%% 
+%%% The following gives definition type environments (which only differ
+%%% from theorem type invironmants in the choices of fonts).  The
+%%% numbering is still tied to the theorem counter.
+%%% 
+
+\theoremstyle{definition}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{example}[thm]{Example}
+
+%%
+%% Again more of these can be added by uncommenting and editing the
+%% following. 
+%%
+
+%\newtheorem{note}[thm]{Note}
+
+
+%%% 
+%%% The following gives remark type environments (which only differ
+%%% from theorem type invironmants in the choices of fonts).  The
+%%% numbering is still tied to the theorem counter.
+%%% 
+
+\theoremstyle{remark}
+
+\newtheorem{remark}[thm]{Remark}
+
+
+%%%
+%%% The following, if uncommented, numbers equations within sections.
+%%% 
+
+%\numberwithin{equation}{section}
+
+\begin{document}
+
+\centerline{\LARGE \bf Solving Quadratic Equations}
+\smallskip
+\centerline{\large Notes by}
+\smallskip
+\centerline{\Large  Ralph Howard}
+\bigskip
+
+
+It is well known how to solve polynomial equations of the first
+degree.  For a first degree equation $ax+b=0$ with $a\neq 0$ the
+solution is $x=-b/a$.  We now look at solving $ax^2+bx+c=0$.
+
+\begin{thm}
+The equation $ax^2+bx+c=0$ with $a\neq 0$ as the solutions
+$$
+x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+$$
+\end{thm}
+
+\begin{proof}
+We use the method of completing the square to rewrite $ax^2+bx+c$.
+\begin{align*}
+ax^2+bx+c&=a\left( x^2 + \frac{b}{a}x+\right)+c \\
+  &=a\left( x^2 + \frac{b}{a}x+ \left(\frac{b}{2a}\right)^2
+     -\left(\frac{b}{2a}\right)^2 +\right)+c \\
+  &=a\left( x+\frac{b}{2a}\right)^2 -  a\left(\frac{b}{2a}\right)^2+c\\
+  &= a\left( x+\frac{b}{2a}\right)^2- \frac{b^2-4ac}{4a}.
+\end{align*}
+Therefore $ax^2+bx+c=0$ can be rewritten as 
+$$
+a\left( x+\frac{b}{2a}\right)^2- \frac{b^2-4ac}{4a}=0,
+$$
+which can in turn  be rearranged as
+$$
+\left( x+\frac{b}{2a}\right)^2= \frac{b^2-4ac}{4a^2}.
+$$
+Taking square roots gives
+$$
+x+\frac{b}{2a}= \frac{\pm \sqrt{b^2-4ac}}{2a}
+$$
+which implies
+$$
+x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+$$
+as required.
+\end{proof}
+
+
+
+
+\end{document}
+
+
+
+</pre> 
+
+
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+
