@@ -67,6 +67,19 @@ href="http://www.adobe.com/prodindex/acrobat/readstep.html">here.</a>
 
 <BR>
 
+<DT>
+<strong><FONT COLOR="#FFCD39"> Tests:</FONT></strong><BR>
+<DD><a href="test1.pdf">Test 1</a> <Spacer type=horizontal size=10>
+    <a href="sum1.pdf">Results on test 1</a>
+    <BR>
+<DD><a href="test2.pdf">Test 2</a> <Spacer type=horizontal size=10>
+     <a href="sum2.pdf">Results on test 2</a>
+    <BR>
+<DD><a href="test3.pdf">Test 3</a> <Spacer type=horizontal size=10>
+   <a href="sum3.pdf">Results on test 3</a>
+    </a><BR>
+<DD><a href="final.pdf">Final</a>
+
 
 <DT><strong><FONT COLOR="#FFCD39"> Homework:</FONT> </strong> 
 <DD>
