@@ -1,0 +1,297 @@
+%%%  This document is a LaTeX2e document 
+%%%  It uses the AMS article style  
+
+\documentclass[11pt]{amsart}
+ 
+%%% Uncomment (or comment) any of the following if you wish to use 
+%%% (or not use) the feature.
+
+%%% Running Headers and footers
+%%%\usepackage{fancyheadings}
+
+%%% Multipart figures
+%\usepackage{subfigure}
+
+%%% Make more symbols available 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+%%% Some packages useful for graphics 
+% \usepackage{bezier}
+% \usepackage{epic,eepic}	
+%\usepackage{epsfig}            % For postscript
+
+%%% While not a package, here is a reminder on the usage of 
+%%% \includegraphics:
+%\includegraphics[height= ,width= , angle=, scale=]{filename}
+
+%%% Surround parts of graphics with box
+%\usepackage{boxedminipage}
+ 
+%%% If you want to generate a toc for each chapter (use with book)
+%  \usepackage{minitoc}
+ 
+%%% Bold Italic font.  My convention is to use this font when defining
+%%% terms. The usage is the same as \emph{}
+
+\newcommand{\bi}[1]{{\bf\itshape #1\/}}  % Bold Italic (used for def'ing 
+                                  % terms) 
+%%% Name and addresses:
+
+%\author{Ralph Howard}
+%
+%\address{Department of Mathematics,
+%University of South Carolina,
+%Columbia, S.C. 29208, USA}
+%\email{howard\char'100math.sc.edu}
+%\urladdr{www.math.sc.edu/$\sim$howard}
+%
+%%% Name(s) and addresses of coauthors:
+
+% \author{}
+% 
+% \address{Department of Mathematics,
+% University_Name,
+% Address}
+% \email{}
+% \urladdr{}
+
+%%% Current date (Edit to give another date):
+
+\date{\today}
+
+%%%%%%  Formatting:
+
+%%% Formating references to equations:
+
+\newcommand{\eq}[1]{~\eqref{#1}}
+
+%%%
+%%%  Sized delimiters.  Note \( and \) and \[ \] override
+%%%  LaTeX's start and stop math mode
+%%%
+
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+
+%%%  For Marginal Notes.  Useful during editing, especially with 
+%%%  several authors involved.
+
+\catcode`@=11 \@mparswitchfalse  %This puts the \mnote's on the right.
+
+\newcounter{mnotecount}[section]
+\renewcommand{\themnotecount}{\thesection.\arabic{mnotecount}}
+\newcommand{\mnote}[1]
+{\protect{\stepcounter{mnotecount}}$^{\mbox{\footnotesize  $%\!\!\!\!\!\!\,
+      \bullet$\themnotecount}}$ \marginpar{\null\hskip-9pt\vskip-30pt\raggedright\tiny\em
+      \themnotecount:\! #1} }
+%\newcommand{\mnote}[1]{}	 %Deletes mnotes for a final copy
+
+
+\newcommand{\ralph}{{\tiny \bf *RH*} } % For labeling a \mnote as 
+                                        % being by Ralph Howard.
+%\newcommand{\co}{{\tiny\bf *CA*} }  % For labeling a \mnote as 
+                                        % being by Co Author.
+
+
+%%%  Theorem type environments
+
+% \newtheorem{theorem}{Theorem}  % I have used this for theorems in 
+                 % the introduction for labeling independent of the
+                 % rest of the document. 
+
+%\swapnumbers  % Changes num Theorem to Theorem num.  Only effects the   
+               % environments listed below it.
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{claim}[thm]{Claim}
+ 
+\theoremstyle{definition}
+
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+%%%%%% My standard abbreviations for mathematical symbols.  Some 
+%%%%%% have variants for compatibility with coauthors. 
+
+%%% Standard algebraic objects:
+
+\newcommand{\C}{{\mathbf C}}   % Complex numbers
+% \newcommand{\C}{{\mathbb C}}   % Complex numbers, blackboard bold 
+                                 % version
+\newcommand{\Q}{{\mathbf Q}}   % rational numbers
+%\newcommand{\Q}{{\mathbb Q}}   % rational numbers, blackboard bold 
+                                % version.
+\newcommand{\R}{{\mathbf R}}   % Real Numbers
+%\newcommand{\R}{{\mathbb R}}   % Real Numbers, blackboard bold 
+							    % version.
+\newcommand{\Z}{{\mathbf Z}}   % Integers 
+%\newcommand{\Z}{{\mathbb Z}}   % Integers, blackboard bold 
+							    % version.
+
+%%% Standard geometric objects:
+
+\newcommand{\s}{{\mathbf S}}   % The sphere
+%\newcommand{\s}{{\mathbb S}}   % The sphere, blackboard bold 
+							    % version.
+\newcommand{\Hy}{{\mathbf H}}   % the Hyperbolic space
+%\newcommand{\Hy}{{\mathbb H}}   % the Hyperbolic space, blackboard 
+                                 % bold version.
+\newcommand{\nothing}{\varnothing} % The empty set.	
+
+%%% Standard Lie groups:
+
+\newcommand{\GL}{{\mathbf{GL}}} % General Linear group			
+%\newcommand{\GL}{{\mathbb{GL}}} % General Linear group, blackboard 
+                                 % bold version.
+\renewcommand{\O}{{\mathbf O}}  % Orthogonal group
+%\renewcommand{\O}{{\mathbb O}}  % Orthogonal group, blackboard 
+                                 % bold version.
+\newcommand{\SO}{{\mathbf{SO}}} % Special Orthogonal group							
+%\newcommand{\SO}{{\mathbb{SO}}} % Special Orthogonal group,
+                                 % blackboard bold version.
+
+%%% Derivatives:
+
+\newcommand{\f}{\partial}    
+%\newcommand{\p}[1]{{\frac{\partial}{\partial #1}}}  % d/d#1 
+                                                % (the vector field)
+%\renewcommand{\d}{\,\mathsf{d}}   % Sometimes used as the "d" in an 
+                                  % integral.
+
+%%% Geometric and topological objects:
+
+\newcommand{\area}{\operatorname{Area}\nolimits}
+\newcommand{\dist}{\operatorname{dist}}  
+\newcommand{\length}{\operatorname{Length}\nolimits}
+\newcommand{\vol}{\operatorname{Vol}\nolimits}
+ 
+\newcommand{\con}{\nabla}     % CONection on a manifold.     
+\newcommand{\acon}{\overline{\nabla}} % Ambient CONection.
+
+\newcommand{\leb}{{\mathcal L}}     %Lebesue measure.
+\newcommand{\hau}{{\mathcal H}}     % Hausdorff measure.
+
+\newcommand{\un}{{\mathbf n}}       % Unit Normal.
+\newcommand{\ut}{{\mathbf t}}       % Unit Tangent.
+\newcommand{\ub}{{\mathbf b}}       % Unit Binormal.
+\newcommand{\ii}{\text{\sl I\!I}}   % Second fundamental form
+
+%%% Misc.
+
+\newcommand{\cd}{,\dots,}      % Commas with Dots. i.e. ,...,
+\newcommand{\e}{\varepsilon}   % epsilon that looks small.
+\newcommand{\image}{\operatorname{Image}}
+\newcommand{\ol}{\overline}   % OverLine
+\newcommand{\Span}{{\operatorname{Span}}}
+\newcommand{\trace}{\operatorname{tr}}
+\newcommand{\cn}{\colon}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\lla}{\left\langle}
+\newcommand{\rra}{\right\rangle}
+\renewcommand{\setminus}{\smallsetminus}
+\newcommand{\diam}{\operatorname{Diameter}}
+\newcommand{\co}{\operatorname{Co}}
+
+%%% Title
+
+\title[]{}
+
+%%% Subject and keyword information:
+
+%\subjclass[2000]{}
+%\keywords{}
+
+
+\begin{document}
+ 
+% \maketitle
+% \tableofcontents
+% 
+% \begin{abstract}
+% \end{abstract}
+
+
+\begin{center}\Large
+Mathematics 734 Final\\	
+Due by 2:00pm  Wednesday May 5
+\end{center}
+
+\begin{enumerate}
+\item Recall that if $A$ is a bounded subset of $\R^n$, then the \bi{diameter} of $A$ 
+is
+$$\diam(A):=\sup\{\|a_1-a_2\|: a_1,a_2 \in A\}.$$
+For a given diameter we wish to find the figure, $A$, of greatest volume $V(A)$.
+  Do this along 
+the following lines:
+     \begin{enumerate}
+	\item Show that if $A$ has diameter $D$ and is symmetric about the origin
+	(that is $a\in A$ implies $-a\in A$) then $D$ is contained in the ball of radius 
+	$D/2$ about the origin.
+	\item Let $\co A$ be the convex hull of $A$.  Then show  $\diam(\co A)=\diam(A)$
+	and that $A\subseteq \co A$ (so that $V(A)\leq V(\co A)$.  (I am not going to 
+	be offended if you just draw a picture and say this is clear.)  Thus in solve our 
+	problem of finding the figure of largest volume with given diameter, we can 
+	restrict our selves to convex sets.
+	\item Let $A$ be a convex set.  Let
+	$$
+	\frac12(A-A):=\left\{ \frac12(a_1-a_2):  a_a,a_2\in A\right\}.
+	$$
+	Show 
+	$$
+	\diam\(\frac12(A-A)\)\le \diam(A).
+	$$
+	\item Recall the Brunn-Minkowski inequality is that for $A,B\subseteq \R^n$ 
+	that $V(A+B)^{1/n}\ge V(A)^{1/n}+V(B)^{1/n}$.  Use this to show 
+	$$
+	V\(\frac12(A-A)\)\le V(A).
+	$$
+	\item Put this all together to 
+	 show that the ball of radius $D/2$ is the figure with diameter $D$
+	that has the greatest volume.
+   \end{enumerate}
+
+\item Let $c\cn [0,L]\to \R^2$ be a $C^2$ unit speed curve of length $L$  with 
+$$
+c(0)=(0,0),\quad c(L)=(1,1),\quad c'(0)=\[\begin{matrix}1\\0\end{matrix}\],
+$$	
+and $|\kappa(s)|=\|c''(s)\|\le 1$.  Show that $L\ge \pi/2$.
+
+\item If $u\cn [a,b]\to\R$ is a $C^1$ with $u(x)>0$ then the area when the 
+graph $y=u(x)$ is revolved about the $x$-axis is
+$$
+\mathcal A[u] =2\pi\int_a^bu\sqrt{1+(u')^2}\,dx.
+$$
+   \begin{enumerate}
+   \item Find the Euler-Lagrange equation for minimizing $\mathcal A [u]$ subject
+   to $u(a)=y_1$ and $u(b)=y_2$.  
+   \item Show that for any constants $c>0$ and $x_0\in \R$ that 
+    $u(x)=\frac1c\cosh(c(x-x_0))$ is a solution to the Euler-Lagrange 
+   equation.
+   \end{enumerate}
+
+\item Let $c\cn (a,b)\to \R^2\setminus \{ (0,0)\}$ be a continuous curve.  Show that 
+there are continuous functions $\rho\cn (a,b)\to (0,\infty)$ and $\phi\cn (a,b)\to \R$ such 
+that $c(t)=(\rho(t)\cos(\phi(t)),\rho(t)\sin(\phi(t)))$ for $t\in (a,b)$. {\sc Hint:} Start by showing 
+$p\cn (0,\infty)\times \R\to \R\setminus \{(0,0)\}$ given by 
+$p(r,\theta)=(r\cos(\theta),r\sin(\theta))$ is a covering map.
+
+
+\end{enumerate}
+\bibliographystyle{amsplain}
+%\bibliography{/home/howard/texmf/inputs/HowRefs} %For use at school.
+\bibliography{~/texmf/inputs/HowRefs} %For use at home.
+ 
+\end{document}
