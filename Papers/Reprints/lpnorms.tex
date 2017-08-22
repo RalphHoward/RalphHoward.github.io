@@ -1,0 +1,590 @@
+q\documentstyle{amsppt}
+%\nologo
+\magnification=\magstep 1
+\def\T{$T:L^p[0,1]\to L^q[0,1]\ $}
+\def\nfp{\| f\| _p}
+\def\ntfp{\| Tf\| _p}
+\def\ntfq{\| Tf\| _q}
+\def\V{$V:L^p[0,1]\to L^q[0,1]\ $}
+\def\ntpq{\| T\| _{p,q}}
+\def\ntp{\| T\| _{p,p}}
+\def\nvpq{\| V\| _{p,q}}
+\def\nvp{\| V\|_{p,p}}
+
+\widestnumber\key{HAALAAP}
+\NoBlackBoxes
+
+\topmatter
+\title Norms of positive operators on $L^p$-spaces \endtitle
+\author Ralph Howard*\\
+        Anton R. Schep** \endauthor
+\thanks{*Research supported in part by the National Science Foundation under
+grant number DMS-8803585, **Research supported in part by a Research and
+Productive Scholarship grant from the University of South Carolina}
+\endthanks
+\affil University of South Carolina \endaffil
+\address {Department of Mathematics, University of South Carolina, Columbia,
+SC 29208}
+\endaddress
+\subjclass{47A30, 47B38, 47G05}
+\endsubjclass
+\keywords{Operatornorms, Positive linear operator, Volterra operator}
+\endkeywords
+\abstract {Let $0\le T: L^p(Y,\nu) \to L^q(X,\mu)$ be a positive linear
+operator and let $\ntpq$ denote its operator norm. In this paper a
+method is given to compute $\ntpq$ exactly or to bound $\ntpq$ from above. As
+an application the exact norm $\nvpq$ of the Volterra operator $Vf(x)= \int
+_0^x f(t)dt$ is computed.} 
+\endabstract
+
+\endtopmatter
+
+\document
+\heading 1. Introduction\endheading
+For $1\le p <\infty$ let $L^p[0,1]$ denote the Banach space of (equivalence
+classes of) Lebesgue measurable functions on [0,1] with the usual norm $\nfp =
+(\int_0^1 |f|^p dt)^{\frac 1p}$. For a pair $p,q$ with $1\le p,q<\infty$ and a
+continuous linear operator \T the operator norm is defined as usual by
+$$\ntpq = \sup \{ \ntfq :\nfp =1 \} . \tag 1-1$$
+Define the Volterra operator \V by
+$$Vf(x)= \int _0^x f(t)dt. \tag 1-2$$
+The purpose of this note is to show that for a class of linear operators $T$
+between $L^p$ spaces which are positive (i.e. $f \ge 0$ a.e. implies $Tf\ge 0
+$ a.e.) the problem of computing the exact value of $\ntpq$ can be reduced to
+showing that a certain nonlinear functional equation has a nonnegative
+solution. We shall illustrate this by computing the value of $\nvpq$ for $V$
+defined by (1-2) above.
+
+We first state this result. If $1<p<\infty$ then let $p'$ denote the conjugate
+exponent of $p$, i.e. $p' =\frac p{p-1} $ so that $\frac1p +\frac 1{p'} =1$.
+For $\alpha,\beta >0$ let $$B(\alpha ,\beta )= \int_0^1 t^{\alpha -1}
+(1-t)^{\beta -1} dt$$ be the Beta function.
+
+\proclaim{Theorem 1}
+If $1<p,q<\infty$ then the norm $\nvpq$ of the Volterra operator \V is
+$$\nvpq = (p')^{\frac 1q} q^{\frac 1{p'}} (p+q')^{\frac {q-p}{pq} } B(\frac
+1q, \frac 1{p'})^{-1} \tag 1-3$$ In the case $p=q$ this
+reduces to $$\nvp =\frac {p^ \frac 1{p'}(p')^\frac 1p}{B(\frac 1p ,\frac
+1{p'})}\tag 1-4$$
+\endproclaim
+ 
+Special cases of this theorem are known. When $p=q=2k$ is an even integer, then
+the result is equivalent to the differential inequality of section $7.6$ of
+\cite {H-L-P}. This seems to be the only case stated in the literature.
+The cases that $p$ or $q$ equals $1$ or  $\infty$ are elementary. It is easy to
+see that $\|V\|_{p,\infty } =\| V\|_{1,q} =1$ for $1\le p\le \infty$ and $1\le
+q\le \infty $. It is also straightforward for $1<p\le \infty$ and $1\le q <
+\infty$ that $\|V\|_{p,1}=(\frac 1{p'+1})^{\frac 1{p'}} $ and $\| V\|_{\infty
+,q}= (\frac 1{q+1})^\frac 1q$. 
+
+The proof of theorem 1  is based on a general result about compact positive
+operators between $L^p$ spaces. This theorem in turn will be deduced from a
+general result about norm attaining linear operators between smooth Banach
+spaces (see section 2 for the exact statement of the result).
+
+In what follows $(X,\mu )$ and $(Y,\nu )$ will be $\sigma$-finite measure
+spaces. If $T: L^{p}(Y,\nu ) \to L^{q}(X,\mu )$ is a continuous linear
+operator we denote by $T^*$ the adjoint operator $T^*: L^{q'}(X,\mu ) \to
+L^{p'}(Y,\nu )$. For any real number $x$ let $\operatorname{sgn} (x)$ be the
+sign of $x$ (i.e. $\operatorname{sgn} (x)=1 $ for $x>0$, $=-1$ for $x<0$ and
+$=0$
+for $x=0$ ). Then for any bounded linear operator $T: L^{p}(Y,\nu ) \to
+L^{q}(X,\mu )$ with $1<p,q<\infty$ we call a function $0\neq f \in L^p(X,\mu)$
+a {\it critical point\/} of $T$ if for some real number $\lambda$ we have
+$$T^*(\operatorname{sgn} (Tf) |Tf|^{q-1}) =\lambda \operatorname{sgn}
+(f)|f|^{p-1} \tag1-5$$ (such  function $f$ is at least formally a solution to
+the Euler-Lagrange equation for the variational problem implicit in the
+definition of $\ntpq$). In the case that $T$ is positive and $f\ge 0$ a.e.
+(1-5) takes on the simpler form 
+$$T^*((Tf)^{q-1})=\lambda f^{p-1}\tag 1-6$$
+For future reference we remark that the value of $\lambda$ in (1-5) and (1-6)
+is not invariant under rescaling of $f$. If $f$ is replaced by $cf$ for some
+$c>0$ then $\lambda$ is rescaled to $c^{q-p}\lambda$. Recall that a bounded
+linear operator $T:X\to Y$ between Banach spaces is called {\it norm
+attaining\/} if for some $0\neq f \in X$ we have $\| Tf\|_Y= \|T\| \| f\|_X$.
+In this case $T$ is said to attain its norm at $f$. The following theorem will
+be proved in section 2.
+
+\proclaim{Theorem 2} Let $1<p,q<\infty$ and let $T: L^{p}(Y,\nu ) \to
+ L^{q}(X,\mu )$ be a bounded operator.
+\roster
+\item"(A)" If $T$ attains its norm at $f\in L^p(X,\mu)$, then $f$ is a
+critical
+point of $T$ (and so satisfies (1-5) for some real $\lambda$).
+\item"(B)" If $T$ is positive and compact, then (1-6) has nonzero solutions. If
+also any two nonnegative critical points $f_1,f_2$ of $T$ differ by a positive
+multiple, then the norm $\ntpq$ is given by
+$$\ntpq = \lambda^{\frac 1q} \nfp ^{\frac {p-q}q} \tag 1-7$$
+where $f\neq 0$ is any nonnegative solution to (1-6)
+\endroster
+\endproclaim
+
+In section 2 we give an extension of theorem 2(A) to norm attaining operators
+between Banach spaces with smooth unit spheres and use this result to prove
+theorem 2B.  Theorem 2 is closely related to results of Gra\'slewicz \cite
+{Gr}, who shows that if $T$ is positive, $p\ge q$ and (1-6) has a solution
+$f>0$ a.e. for $\lambda =1$, then $\ntpq =1$. In  section 4 of this paper we
+indicate an extension of this result. We prove that if there exists a $0<f$
+a.e. such that 
+$$T^*(Tf)^{q-1}\le \lambda f^{p-1}, \tag 1-8
+$$ then $\ntp \le \lambda^{\frac 1p}$ in case $p=q$ and in case $q<p$ we have
+$\ntpq \le \lambda ^{\frac 1p} \| Tf\|_{q}^{1-\frac qp}$ under the additional
+hypothesis that $Tf\in L^q$. Inequality (1-8) can be used to prove a classical
+inequality of Hardy. Another application of this result is a factorization
+theorem of Maurey about positive linear operators from $L^p$ into $L^q$. 
+
+It is worthwhile remarking that in case $p=q=2$ the equation (1-5) reduces to
+the linear equation $T^*Tf= \lambda f$. In this case theorem 2 is closely
+related to the fact that in a Hilbert space the norm of a compact operator is
+the square root of the largest eigenvalue of $T^*T$.
+
+
+\heading 2. Norm attaining linear operators between smooth Banach spaces.
+\endheading Let $E$ be a Banach space and let $E^*$ denote its dual space. If
+$f^*\in E^*$ then we denote by $f^*(f)= <f,f^*>$   the value of $f^*$ at
+$f\in E$. If $0\neq f\in E$ then $f^*\in E^*$ {\it norms\/} $f$ if $\| f^*\|
+=1$ and $<f,f^*>=\| f\|$. By the Hahn-Banach theorem there always exist such
+norming linear functionals. A Banach space $E$ is called {\it smooth \/} if for
+every $0\neq f\in E$ there exists a unique $f^*\in E^*$ which norms $f$.
+Geometrically this is equivalent with the statement that at each point $f $ of
+the unit sphere of $E$ there is a unique supporting hyperplane. It is well
+known that $E$ is smooth if and only if the norm is G\^ateaux differentiable at
+all points $0\neq f\in E$ (see e.g. \cite{B}). If $E$ is a smooth Banach space
+and $0\neq f\in E$, then denote by $\Theta _E(f)$ the unique element of $E^*$
+that norms $f$, note $\| \Theta_E (f)\| =1$. For the basic properties of smooth
+Banach spaces and the continuity properties of the map $f \mapsto \Theta_E(f)$
+we refer to \cite{B, part 3 Chapter 1}.
+
+The basic examples of smooth Banach spaces are the spaces $L^p(X,\mu)$ where
+$1<p<\infty$. For $0\neq f\in L^p(X,\mu)$ one can easily show that
+$$\Theta_{L^p}(f)=\nfp^{-(p-1)}\operatorname{sgn} (f)|f|^{p-1}\tag 2-1$$
+by considering when equality holds in H\"older's inequality. 
+
+The following proposition generalizes part (A) of theorem 2 to norm attaining
+operators between smooth Banach spaces.
+\proclaim{Proposition} Let $T:E\to F$ be a bounded linear operator between
+smooth
+Banach spaces. If $T$ attains its norm at $0\neq f\in E$ then there exists a
+real number $\alpha$ such that 
+$$T^*(\Theta_F(Tf))=\alpha \Theta_E(f)\tag 2-2$$
+and the norm of $T$ is given by 
+$$\| T\| =\alpha \tag 2-3$$
+\endproclaim
+\demo{Proof} Define $\Lambda_1 ,\Lambda_2 \in E^*$ by
+$$\align
+\Lambda_1 (h) &=<h,\Theta_E (f)>\\
+\Lambda_2 (h) &=\frac 1{\| T\|} <Th,\Theta_F(Tf)>=\frac 1{\|T\|}<h,
+T^*(\Theta_F(Tf))>. 
+\endalign$$
+Then $\| \Lambda_1\| =1$ (since $\| \Theta_E(f)\| =1$) and $\Lambda_1(f)=\|
+f\|$, so $\Lambda_1$ norms $f$. Similarly $\| \Theta_F(Tf)\| =1$ implies that
+$\| \Lambda_2\| \le 1$, but using $\| Tf\| =\| T\| \| f\|$ we have
+$\Lambda_2 (f)=\| f\|$. Therefore $\Lambda_2$ also norms $f$. The smoothness of
+$E$ now implies that $\Lambda_1 =\Lambda_2$. Hence (2-2) holds with $\alpha
+=\| T\|$ as claimed.
+\enddemo
+
+Theorem 2(A) now follows from the following lemma.
+\proclaim{Lemma} If $E=L^p(X,\mu), F=L^q(Y,\nu)$ with $1<p,q<\infty$ and $f$ is
+a solution of (2-2), then $f$ is a critical point of $f$, i.e.
+$$T^*(\operatorname{sgn} (Tf) |Tf|^{q-1}) =\lambda \operatorname{sgn}
+(f)|f|^{p-1} $$
+where
+$$\lambda = \alpha^q \nfp^{q-p} \tag 2-4$$
+\endproclaim
+\demo{Proof} First we note that if $f$ satisfies (2-2), then we have 
+$$\ntfq = <Tf, \Theta_F(Tf)> =<f,T^*\Theta_F (Tf)=<f,\alpha \Theta_E
+(f)>=\alpha \nfp .$$
+Substitution of (2-1) into (2-2) and multiplication by $\ntfq ^{q-1}$ gives
+$$T^*(\operatorname{sgn} (Tf)|Tf|^{p-1})=\alpha \ntfq^{q-1} \nfp^{-(p-1)}
+\operatorname{sgn} (f)|f|^{p-1}=\alpha ^{q}\nfp^{q-p} \operatorname{sgn}
+(f)|f|^{p-1}.$$
+This completes the proof of the lemma and of theorem 2(A).
+\enddemo
+
+To prove theorem 2(B), we first make the observation that if $T:E\to F$ is a
+compact linear operator and $E$ is reflexive, then $T$ attains its norm (since
+every bounded sequence in $E$ contains a weakly convergent subsequence and $T$
+maps weakly convergent sequences onto norm convergent sequences). If now $T$ is
+a positive compact operator from $L^p(X,\mu)$ into $L^q(Y,\nu)$, then $T$
+attains its norm at a nonnegative $f\in L^p(X,\mu)$ (simply replace  $f$
+by $|f|$, if $T$ attains its norm at $f$). If  the additional hypothesis of
+theorem 2(B) holds, then any other nonnegative critical point $f_0$ is a
+positive multiple of $f$ and therefore $T$ also attains its norm at $f_0$.Now
+the proposition and the lemma imply that $\| T\| =\alpha$, where $\alpha$
+satisfies (2-4). Hence (1-7) holds. This completes the proof of Theorem 2.
+
+\heading 3. The norm of the Volterra operator \endheading
+
+In this section we shall prove Theorem 1. We first notice that the adjoint
+operator of the Volterra operator is given by
+$$V^*g(x)=\int_x^1 g(t)dt \text{ a.e.} \tag 3-1$$ Since $\int _0^x f(t)dt$ and
+$\int _x^1 g(t)dt)$ are absolutely continuous functions, we can assume that
+$V(f)$,respectively $V^*(g)$, equal these integrals everywhere. From Theorem
+2(B) and the rescaling property of $\lambda$ it follows that to prove Theorem 1
+it suffices to show that
+$$V^*((Vf)^{q-1})=\lambda f^{p-1}\tag 3-2$$
+has a unique positive solution in $L^p[0,1]$ normalized so that
+$$Vf(1)=\int _0^1 f(t)dt=1\tag 3-3$$
+Since $Vf$ is chosen to be absolutely continuous, we see that $V^*((Vf)^{q-1})$
+can be chosen to be continuously differentiable on $[0,1]$. Hence any
+nonnegative solution of (3-2) can be assumed to be continuously differentiable
+on $[0,1]$. Also if $f$ is a nonnegative solution of (3-2) normalized so that
+(3-3) holds, then $Vf$ is nonnegative and $Vf(1)=1$ so that $Vf$ is positive on
+a neighborhood of $x=1$. From (3-1) we conclude that $V^*((Vf)^{q-1})$ is
+positive on $[0,1)$. Hence any nonnegative solution of (3-1) and (3-2) can be
+assumed to be strictly positive  and continuously differentiable on
+$[0,1)$. Assume now that $f$ is such a solution of (3-1) satisfying (3-2). Take
+the derivative on both sides in (3-1) and then multiply both sides by $f$
+to get the following differential equation
+$$-(Vf)^{q-1}f=\lambda (p-1)f^{p-1}f'.\tag 3-4$$
+Using that $f$ is the derivative of $Vf$, we can integrate both sides to get
+$$\frac 1q-\frac 1q (Vf)^{q}=\frac {\lambda (p-1)}p f^p\tag 3-5$$
+since $Vf(1)=1$ and $f(1)=0$ by (3-2). To simplify the notation we let
+$v(x)=Vf(x)$. Then $v(x)>0$ for $x>0$, $v'(x)>0$ for $x<1$, $v'(1)=0$ and (3-5)
+becomes
+$$\frac 1q (1-v(x)^q)= \frac {\lambda (p-1)}{p} v'(x)^p \tag 3-6$$
+or
+$$c_{p,q}= \frac {v'(x)}{\root p \of{1-v(x)^q}} \tag 3-7$$
+where
+$$c_{p,q}= (\frac p{\lambda q(p-1)})^{\frac 1p}. \tag 3-8$$
+Using that $v(0)=0$ we can integrate (3-7) to get 
+$$c_{p,q} x =\int _0^{v(x)} \frac 1{\root p \of{ 1-t^q}} dt. \tag 3-9$$
+Putting $x=1$ in this equation we get
+$$c_{p,q}=\int_0^1 \frac 1{\root p \of{1-t^q}} dt=\frac 1q B(\frac 1q,1- \frac
+1p) =\frac 1q B(\frac 1q, \frac 1{p'}). \tag 3-10$$ 
+The integral in (3-10) was reduced to the Beta function by the change of
+variable $t=u^{\frac 1q}$. The equations (3-9) and (3-10) uniquely determine
+the function $v$ and therefore also $f=v'$ and the number $\lambda$. This shows
+that  (3-2) and (3-3) have a unique nonnegative solution. Moreover starting
+with $v$ and $\lambda$ given by (3-9) and (3-10) one sees by working backwards
+that $f=v'$ is a nonnegative solution of (3-2) and (3-3). Therefore by Theorem\
+2(B) the norm of $V$ is given by (1-7). 
+>From equations (3-10) and (3-8) we can solve for $\lambda$ to
+obtain $$\lambda^{\frac 1q} =\frac {(p')^{\frac 1q}q^{\frac {p-1}q}}{B(\frac
+1q ,\frac 1{p'})^{\frac pq}}. \tag 3-11$$
+In case $p=q$ this shows that $\nvp =\lambda^{\frac 1p}$, which proves (1-4).
+In
+case $p \ne q$ we need to compute $\| v'\|_p =\nfp $. To do this, multiply
+(3-7) by $\root p \of{1-v^q}$, raise the result to the power
+$p-1$, and then multiply by $v'$ to obtain
+$$v'(x)^p = c_{p,q}^{p-1}v'(x) (1-v(x)^q)^{\frac {p-1}p}. \tag3-12$$
+Using that $v(0)=0$ and $v(1)=1$ we can integrate (3-12) to obtain
+$$\aligned \nfp ^p &=\| v'\|_p^p =c_{p,q}^{p-1} \int ^1_0 (1-t^q)^{\frac
+1{p'}}dt\\
+&=c_{p,q}^{p-1}\frac 1q B(\frac 1q ,\frac 1{p'} +1)\\
+&=c_{p,q}^{p-1}\frac 1q \frac {\frac 1{p'}}{\frac 1q +\frac 1{p'}} B(\frac
+1q ,\frac 1{p'})\\
+&=\frac {B(\frac 1q ,\frac 1{p'})^p}{q^{p-1} (p+q')}. \endaligned \tag 3-13$$
+(Here we used the identity $B(\alpha ,\beta +1)=\frac \beta{\alpha +\beta}
+B(\alpha ,\beta  )$. ) Therefore 
+$$\nfp^{\frac {p-q}q}= \frac {B(\frac 1q ,\frac 1{p'})^{\frac
+{p-q}{q}}}{q^{\frac {(p-1)(p-q)}{pq}} (p+q')^{\frac {p-q}{pq}}} \tag 3-14$$
+Using (3-11) and (3-14) in formula (1-7) now gives formula (1-3) and the proof
+of theorem 1 is complete.
+
+\heading 4. Bounds for norms of positive operators \endheading
+In this section we shall consider a positive operator $T$ acting on a space of
+(equivalence classes of) measurable functions and give a necessary and
+sufficient condition for $T$ to define a bounded linear operator from
+$L^p(Y,\nu )$ into $L^q(X,\mu )$ where $1< q\leq p <\infty$ and obtain a
+bound for $\ntpq$, similar to (1-7). Let $L^0(X,\mu)$ denote the space of a.e.
+finite measurable functions on $X$ and let $M(X,\mu)$ denote the space of
+extended real valued measurable functions on $X$. For some applications it is
+useful to assume that $T$ is not already defined on all of $L^p$. Therefore we
+shall assume that $T$ is defined on an {\it ideal} $L$ of measurable functions,
+i.e. a linear subspace of $L^0(Y,\nu )$ such that if $f\in L$ and $|g| \le |f|$
+in $L^0$, then $g\in L$. By $L_+$ we denote the collection of nonnegative
+functions in $L$. A positive linear operator $T:L\to L^0(X,\mu )$ is called
+{\it order continuous} if $0\leq f_n \uparrow f$  a.e. and $f_n , f \in L$
+imply that $Tf_n \uparrow Tf$ a.e.. We first prove that such operators have
+``adjoints''.
+
+ 
+\proclaim {Lemma} Let $L$ be an ideal of measurable functions on $(Y,\nu )$ and
+let $T$ be a positive order continuous operator from $L$ into $L^0(X,\mu )$.
+Then there exists an operator $T^t:L^0(X,\mu )_+ \to M(Y,\nu)_+$ such
+that for all $f\in L_+$ and all $g\in L^0(X,\mu )_+$ we have
+$$\int_X (Tf)g d\mu = \int_Y f (T^tg) d\nu . \tag 4-1$$
+\endproclaim
+
+\demo{Proof} Assume first that there exists a function $f_0>0$ a.e. in $L$. Let
+$g\in L^0(X,\mu )_+$. Then we define $\phi :L_+ \to [0,\infty]$ by
+$\phi (f)= \int (Tf)g d\mu$. Since $Tf_0 <\infty$ a.e. we can find $X_1
+\subset X_2 \subset \dots \uparrow X$ such that for all $n\ge 1$ we have
+$$\int _{X_n} (Tf_0)g d\mu < \infty .$$
+Let $L_{f_0} =\{ h: |h| \le cf_0 \text{ for some constant } c\}$ and define
+$\phi_n :L_{f_0} \to \Bbb R$ by
+$$\phi_n (h)= \int _{X_n}(Th)gd\mu .$$
+The order continuity of $T$ now implies (through an application of  the
+Radon--Nikodym theorem) that there exists a function $g_n\in L^1(Y,f_0d\nu )$
+such that for all $h\in L_{f_0}$ we have
+$$\phi_n (h)=\int_Y hg_n d\nu ,$$
+see e.g. \cite{Z,theorem 86.3} . Moreover we can assume that $g_1 \le g_2 \le
+\dots$ a.e.. Let $g_0 = \operatorname{sup} g_n$. An application of the monotone
+convergence theorem now gives
+$$\int_X (Th)gd\mu = \int_Y hg_0 d\nu$$
+for all $0\le h\in L_{f_0}$. The order continuity of $T$ and another
+application of the monotone convergence theorem now give
+$$\int_X (Tf)gd\mu = \int_Y fg_0 d\nu \tag 4-2$$
+for all $0\le f\in L$. If we put $T^t g= g_0$, then (4-2) implies that (4-1)
+holds in case $L$ contains a strictly positive $f_0$. In case no such $f_0$
+exists in $L$, then we can find via Zorn's lemma a maximal disjoint system
+$(f_n)$ in $L^+$ and apply the above argument to the restriction of $T$ to the
+functions $f\in L$ with support in the support $Y_n$ of $f_n$. We obtain that
+way functions $g_n$ with support in $Y_n$ so that for all such $f$ we have
+$$\int_X (Tf)gd\mu  = \int_{Y_n}fg_nd\nu$$
+Now define $T^tg= \operatorname{sup} g_n$ and one can easily verify that in
+this case again (4-1) holds. This completes the proof of the lemma.
+\enddemo
+
+
+The above lemma allows us to define for any positive operator $T:L\to
+L^0(X,\mu)$ an adjoint operator $T^*$. Let $N= \{ g\in L^0(X,\mu): T^t(|g|)\
+\in L^0(Y,\nu )\}$ and define $T^*g= T^tg^+ -T^tg^-$ for $g\in N$. It is easy
+to see that $T^*$ is positive linear operator from $N$ into $L^0(Y,\nu)$ such
+that $$\int_X (Tf)gd\mu = \int_Y f(T^*g)d\nu \tag 4-3$$
+holds for all $0\le f\in L$ and $0\le g\in N$. Observe that in case $T:L^p \to
+L^q$ is a bounded linear operator and $1\le p,q<\infty$ then $T^*$ as defined
+as  above is an extension of the Banach space adjoint. The above construction
+is motivated by the following example.
+
+
+\demo{Example} Let $T(x,y)\ge 0$ be $\mu \times \nu$-measurable function on
+$X\times Y$. Let $L= \{ f\in L^0(Y,\nu) \text { such that } \int
+T(x,y)|f(y)|d\nu <\infty \text { a.e.}\}$ and define $T$ as the integral
+operator $Tf(x)= \int_Y T(x,y)f(y) d\nu (y)$
+on $L$. Then one can check (using Tonelli's theorem) that $N= \{ g\in
+L^0(X,\mu) \text{ such that } \int_Y T(x,y)|g(x)|d\mu <\infty \text { a.e.}\}$
+and that the operator $T^*$ as defined above is the the integral operator 
+$\int_X T(x,y)g(x)d\mu (x)$.
+\enddemo
+
+We now present a H\"older type inequality for positive linear operators. The
+result is known in ergodic theory (see \cite{K}, Lemma 7.4). We include the
+short proof.
+\proclaim{Abstract H\"older inequality} Let $L$ be an ideal of measurable
+functions on $(Y,\nu )$ and let $T$ be a positive operator from $L$ into 
+$L^0(X,\mu)$. If  $1<p<\infty$ and $p'=\frac p{p-1}$, then we have
+$$T(fg)\le T(f^p)^{\frac 1p} T(g^{p'})^{\frac 1{p'}} \tag 4-4$$
+for all $0\le f,g$ with $fg\in L$, $f^p\in L$ and $g^{p'}\in L$.
+\endproclaim
+\demo{Proof} For any two positive real numbers $x$ and $y$ we have the
+inequality $x^{\frac 1p}y^{\frac 1{p'}}\le \frac 1p x+\frac 1{p'} y$, so that
+if $0\le f,g$ with $fg\in L$, $f^p\in L$ and $g^{p'}\in L$, then for any
+$\alpha >0$
+$$\aligned T(fg)&= T((\alpha f)(\frac 1\alpha )g)\\
+&\le \frac 1p T((\alpha f)^{p})+\frac 1{p'} T((\frac 1\alpha g)^{p'})\\
+&= \frac 1p  \alpha^p T(f^p) +\frac1{p'} \frac 1{\alpha^{p'}}
+T(g^{p'})\endaligned \tag 4-5
+$$
+Now for each $x\in X$ such that $T(f^p)(x)\neq 0$ choose the number $\alpha$
+so that $\alpha^p T(f^p)(x)= \frac 1{\alpha^{p'}} T(g^{p'})(x)$. Then (4-5)
+reduces to (4-4).
+\enddemo
+
+\proclaim{Theorem 3} Let $L$ be an ideal of measurable functions on $(Y,\nu )$
+and let $T$ be a positive order continuous linear operator from $L$ into
+$L^0(X,\mu )$. Let $1<q\le p<\infty$ and assume there exists $f_0\in L$ with
+$0<f_0$ a.e. and there exists $\lambda >0$ such that 
+$$T^*(Tf_0)^{q-1} \le \lambda f_0^{p-1} \tag 4-6$$ 
+and in case $q<p$ also 
+$$Tf_0\in L^q(X,\mu).\tag 4-7$$ 
+Then $T$ can be extended to a positive linear map from $L^p(Y,\nu)$ into
+$L^q(X,\mu)$ with 
+$$\ntpq \le \lambda^{\frac 1p} \| Tf_0\|_q ^{1-\frac qp} \tag 4-8$$ 
+in case $q<p$ and in case $p=q$ 
+$$\ntp \le \lambda ^{\frac 1p}. \tag 4-9$$ 
+If also $f_0\in L^p(Y,\nu)$, then 
+$$\ntpq \le \lambda^{\frac 1q} \| f_0 \|_p^{\frac {p-q}q}. \tag 4-10$$ 
+\endproclaim 
+
+\demo{Proof} Define the positive linear operator $S:L^p(Y,\nu )\to L^0(X,\mu )$
+by $Sf= (Tf_0)^{\frac {q-p}p }\cdot Tf$, note that $S=T$ in case $p=q$. Then it
+is straightforward to verify that $S^*(h)= T^*((Tf_0)^{\frac {q-p}p }\cdot h)$.
+This implies that 
+$$S^*(Sf_0)^{p-1} = S^*((Tf_0)^{\frac {q(p-1)}p})=T^*(Tf_0 )^{q-1} \le \lambda
+f_0^{p-1},$$
+i.e. $S$ satisfies (4-6) with $p=q$. 
+Let $Y_n= \{y\in Y: \frac 1n \le f_0(y) \le n\}$. Then $L^\infty
+(Y_n,\nu) \subset L$. Let $0\le u \in L^\infty (Y_n,\nu)$. Then we have 
+$$\align 
+\int (Su)^p d\mu &= \int S( uf_0^{-\frac 1{p'}}f_0^{\frac 1{p'}})^p d\mu \\ 
+&\le \int S(u^p 
+f_0^{-p+1}) (Sf_0)^\frac p{p'} d\mu \text{ (Abstract H\"older
+inequality)  } \\ 
+&= \int u^pf_0^{-p+1}  S^*(Sf_0)^{(p-1)}d\nu \\ 
+&\le \int u^pf_0^{-p+1} \lambda f_0^{p-1} d\nu  \text{  by (4-6)}  \\ 
+&= \lambda \| u\|_p^p .
+\endalign $$ 
+Hence 
+$$\| Su \|_p \le \lambda ^{\frac 1p} \| u\|_p  \tag 4-11$$
+for all $0\le u\in L^\infty (Y_n,d\nu)$. If  $0\le u\in L$, let $u_n
+=\operatorname{min} (u,n)\chi_{_{Y_n}}$. Then $u_n \uparrow u$ a.e. and (4-11)
+holds for each $u_n$.  The order continuity of $T$ and the monotone convergence
+theorem imply that $\| S\|_{p,p}\le \lambda^{\frac 1p}$. Note that in case
+$p=q$ this proves (4-9). In case $q<p$ define the multiplication operator $M$, 
+by $Mh= (Tf_0)^{\frac {p-q}p}\cdot h$. Then (4-7) implies, by means of
+H\"older's inequality with $r= \frac pq, r'=\frac p{p-q} $, that $\| M\|_{p,q}
+\le \| Tf_0 \|^{1-\frac qp}$. The inequality (4-8) follows now from the
+factorization $T=MS$. 
+Inequality (4-10) follows from (4-8) by using the inequality $\| Tf_0 \|_q \le
+\ntpq \| f_0\|_p$ and solving for $\ntpq$. This completes the proof of the
+theorem. \enddemo 
+
+The above theorem is an abstract version of what is called the {\it Schur test}
+for boundedness of integral operators (see \cite{H-S} for the case $p=q=2$ and
+see \cite{G} ,Theorem 1.I for the case $1<q\le p<\infty$ ).     
+
+\proclaim{Corollary} Let $L$ be an ideal of measurable functions on $(Y,\nu )$
+and let $T$ be a positive order continuous linear operator from $L$ into
+$L^0(X,\mu )$. Let $1<q\le p<\infty$ and assume there exists $f_0\in
+L^p(Y,\nu)$ with $0<f_0$ a.e. and there exists $\lambda >0$ such that 
+$$T^*(Tf_0)^{q-1} = \lambda f_0^{p-1}.\tag 4-12$$
+Then $T$ can be extended to a positive linear map from $L^p(Y,\nu)$ into
+$L^q(X,\mu)$ with 
+$$\ntpq = \lambda^{\frac 1p} \| Tf_0\|_q ^{1-\frac qp}= \lambda^{\frac 1q} \|
+f_0 \|_p^{\frac {p-q}q} \tag 4-13$$ 
+and $T$ attains  its norm at $f_0$.
+\endproclaim
+
+\demo{Proof} If we multiply both sides of (4-12) by $f_0$ and then integrate,
+we get
+$$\int_X (Tf_0)^q d\mu =\lambda \int_Y (f_0)^p d\nu. \tag 4-14$$ This implies
+that $Tf_0\in L^q(X,\mu)$, so that by the above theorem the inequalities (4-8)
+and (4-10) hold. Equality (4-14) shows that $\| Tf_0\| _q =\lambda^{\frac 1q}
+\|f_0\| _p^{\frac pq }$, from which it follows that $\ntpq \ge \lambda^{\frac
+1q} \| f_0\|_p^{\frac pq -1} $. Hence we have equality in (4-10). From this it
+easily follows that (4-13) holds and that $\| Tf_0\|_q =\ntpq \| f_0 \|_p$.
+\enddemo
+
+
+\demo{Remark} In the above corollary one could hope that in case $p=q$ the
+equation (4-12) without the hypothesis $f_0\in L^p$ still would imply that
+$\ntp =\lambda^{\frac 1p}$. Theorem 3 still gives inequality (4-9), but this is
+all what can be said as can be seen from the following example. Let
+$X=Y=[0,\infty)$ with $\mu =\nu$ equal to the Lebesgue measure and define the
+integral operator $T$ by $Tf(x)=\frac 1x \int_0^x f(t)dt$. An easy
+computation shows that for $1<p<\infty$ the equality (4-12) holds for some
+constant $\lambda =\lambda (\alpha)$, whenever $f_0(y)= y^\alpha$ for all
+$-1<\alpha < 0$. One can verify that in this case $\alpha =-\frac 1p$ gives the
+best upperbound for $\ntp$,  in which case $\lambda =(\frac p{p-1})^p$.
+Inequality (4-9) is then the classical Hardy inequality.\enddemo
+
+We now state a converse to the above theorem, which
+is essentially due to \cite{G, Theorem 1.II}. For the sake of completeness we
+supply a proof, which is a simplification of the proof given in \cite{G}.
+
+\proclaim{Theorem 4} Let $0\le T:L^p(Y,\nu )\to L^q(X,\mu )$ be a positive
+linear operator and assume $1<p,q<\infty$. Then for all $\lambda $ with
+$\lambda^{\frac 1q } > \ntpq$ there exists $0<f_0$ a.e. in $L^p(Y,\nu )$ such
+that 
+$$T^*(Tf_0 )^{q-1} \le \lambda f_0^{p-1}. \tag 4-15$$
+\endproclaim
+
+\demo{Proof} We can assume that $\ntpq = 1$. Then we assume that $\lambda >1$.
+Now define $S:L^p(Y, \nu)_+ \to L^p(Y,\nu )_+$ by means of
+$$Sf= (T^*(Tf)^{q-1})^{\frac 1{p-1}}. $$ Then it is easy to verify that $\nfp
+\le 1$ implies that $\| Sf \|_p \le 1$, also that $0\le f_1 \le f_2$ implies
+that $Sf_1 \le Sf_2$ and that $0\le f_n \uparrow f$ a.e. in $L^p$ implies that
+$Sf_n \uparrow Sf$ a.e.. Let now $0<f_1$ a.e. in $L^p(Y, \nu )$ such that $\|
+f_1\|_p \le \frac {\lambda -1}\lambda$. For $n>1$ we define $f_n=f_1 +\frac
+1\lambda Sf_{n-1}$. By induction we verify easily that $f_n \le f_{n+1}$ and
+that $\|f_n \|_p \le 1$ for all $n$. This implies that there exists $f_0$ in
+$L^p$ such that $f_n \uparrow f_0$ a.e. and $\| f_0\| _p \le 1$. Now $Sf_n
+\uparrow Sf_0$ implies that $f_0=f_1+\frac 1\lambda Sf_0$. Hence $Sf_0 \le
+\lambda f_0$, which is equivalent to (4-15) and $f_0 \ge f_1 > 0$ a.e., so that
+$f_0 >0$ a.e. and the proof is complete. \enddemo
+
+We present now an application of the previous two theorems. The result
+is due to Maurey (\cite{M} ).
+
+\proclaim{Corollary } Let $0\le T:L^p(Y,\nu) \to L^q(X,\mu)$ a positive linear 
+operator and assume $1<q<p<\infty$. Then there exists $0<g$ a.e. in
+$L^r(X,\mu)$
+with $\frac 1r =\frac 1q -\frac 1p$ such that $\frac 1g \cdot T: L^p(Y,\nu)
+\to L^p(X,\mu )$.
+\endproclaim
+
+\demo{Proof} From the above theorem it follows that there exists $f_0\in
+L^p (Y,\nu )$ such that (4-6) and (4-7) hold. The factorization follows now
+from the proof of Theorem 3.
+\enddemo
+We conclude with another application of Theorem 3. An ideal $L$ of measurable
+functions is called a Banach function space if $L$ is Banach space such that
+$|g| \le |f|$ in $L$ implies $\| g \| \le \| f\|$.
+
+\proclaim{Theorem 5} Let $L$ be a Banach function space and assume that $T$ and
+$T^*$ are positive linear operators from $L$ into $L$. Then $T$ defines a
+bounded linear operator from $L^2$ into $L^2$.
+\endproclaim
+
+\demo{Proof} Let $S=T^*T$. Then $S$ is a positive operator from $L$ into $L$,
+so $S$ is continuous (see \cite{Z} ). Let $\lambda > r(S)$, where $r(S)$
+denotes the spectral radius of $S$. From the Neumann series of the resolvent
+operator $R(\lambda ,S) =(\lambda -S)^{-1}$ one sees that for all $0< g \in
+L$ we have $f_0=R(\lambda ,S)g \ge \frac 1{\lambda} g>0$ and $Sf_0 \le \lambda
+f_0$, i.e. $T^*(Tf_0)\le \lambda f_0$ so (4-6) holds with $p=q=2$. The
+conclusion follows now from theorem 3.
+\enddemo
+
+A result for integral operators similar to the above theorem was proved in
+\cite{S} ,by completely different methods.
+
+
+\demo{Remark} With some minor modifications of the proofs one can show that
+Theorems 3 and 4 and their corollaries also hold in case $0<q\le 1$.
+\enddemo
+
+ 
+\demo{Acknowledgements} The problem which motivated this paper (finding
+methods to compute and estimate norms of concrete operators like the Volterra
+operator) came up in a conversation between one of the authors and Ken Yarnall.
+We also would like to thank Stephen Dilworth for pointing out that an earlier
+version of the proposition in section 2 had a superfluous assumption.
+\enddemo
+
+\Refs
+
+\ref\key{\bf B} \by B. Beauzamy \book Introduction to Banach spaces and their
+geometry
+\publ North--Holland \yr 1982
+\endref
+
+\ref\key {\bf G} \by E. Gagliardo \paper On integral transformations with
+positive kernel \jour Proc. A.M.S \yr 1965 \pages 429--434 \vol 16 
+\endref
+
+\ref \key {\bf Gr} \by R. Grza\'slewics \paper On isometric domains of positive
+operators on $L^p$--spaces \jour Colloq. Math \yr 1987 \pages 251-- 261
+\vol LII
+\endref
+
+\ref \key{\bf H--L--P} \by G.H. Hardy, J.E. Littlewood and G. P\'olya
+\book Inequalities \publ Cambridge University press \yr 1959 
+\endref
+
+\ref\key {\bf H--S} \by P.R. Halmos and V.S. Sunder \book Bounded Integral
+Operators on $L^2$ Spaces \publ Springer--Verlag \yr 1978 
+\endref
+
+\ref\key {\bf K} \by U. Krengel \book Ergodic Theorems \publ De Gruyter
+\yr 1985
+\endref
+
+\ref\key{\bf M} \by B. Maurey \paper Th\'eor\`emes de factorisation pour les
+op\'erateurs lin\'eaires \`a valeurs dans les espaces $L^p$
+\jour Ast\'erisque \vol 11 \yr 1974
+\endref
+
+\ref \key{\bf S} \by V.S. Sunder \paper Absolutely bounded matrices \jour
+Indiana Univ. J. \yr 1978 \pages 919--927 \vol 27
+\endref
+
+\ref\key{\bf Z} \by A.C. Zaanen \book Riesz spaces II \yr 1983 \publ North
+Holland
+\endref
+
+\endRefs
+\enddocument
+
