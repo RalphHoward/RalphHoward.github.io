@@ -1,0 +1,262 @@
+%%%  This document is a LaTeX2e document 
+%%%  It uses the AMS article style  
+
+\documentclass[11pt]{amsart}
+ 
+%%% Make more symbols available 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+
+
+%%% More flexible enumerate environments.
+
+\usepackage{enumerate}
+
+
+%%% Some packages useful for graphics 
+% \usepackage{bezier}
+\usepackage{epic,eepic}	
+%\usepackage{epsfig}            % For postscript
+\usepackage{graphicx}
+ 
+%%% Bold Italic font.  My convention is to use this font when defining
+%%% terms. The usage is the same as \emph{}
+
+\newcommand{\bi}[1]{{\bf\itshape #1\/}}  % Bold Italic (used for def'ing 
+                                  % terms) 
+ 
+
+\newcommand{\eq}[1]{~\eqref{#1}}
+
+%%%
+%%%  Sized delimiters.  Note \( and \) and \[ \] override
+%%%  LaTeX's start and stop math mode
+%%%
+
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+
+%%%  For Marginal Notes.  Useful during editing, especially with 
+%%%  several authors involved.
+
+\catcode`@=11 \@mparswitchfalse  %This puts the \mnote's on the right.
+
+\newcounter{mnotecount}[section]
+\renewcommand{\themnotecount}{\thesection.\arabic{mnotecount}}
+\newcommand{\mnote}[1]
+{\protect{\stepcounter{mnotecount}}$^{\mbox{\footnotesize  $%\!\!\!\!\!\!\,
+      \bullet$\themnotecount}}$ \marginpar{\null\hskip-9pt\vskip-30pt\raggedright\tiny\em
+      \themnotecount:\! #1} }
+%\newcommand{\mnote}[1]{}	 %Deletes mnotes for a final copy
+
+
+\newcommand{\ralph}{{\tiny \bf *RH*} } % For labeling a \mnote as 
+                                        % being by Ralph Howard.
+%\newcommand{\co}{{\tiny\bf *CA*} }  % For labeling a \mnote as 
+                                        % being by Co Author.
+
+
+%%%  Theorem type environments
+
+% \newtheorem{theorem}{Theorem}  % I have used this for theorems in 
+                 % the introduction for labeling independent of the
+                 % rest of the document. 
+
+%\swapnumbers  % Changes num Theorem to Theorem num.  Only effects the   
+               % environments listed below it.
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{claim}[thm]{Claim}
+ 
+\theoremstyle{definition}
+
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+%\newtheorem{prob}{{\bf Problem}}
+
+
+%%%%%% My standard abbreviations for mathematical symbols.  Some 
+%%%%%% have variants for compatibility with coauthors. 
+
+%%% Standard algebraic objects:
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+
+%%% Derivatives:
+
+\newcommand{\f}{\partial}    
+%\newcommand{\p}[1]{{\frac{\partial}{\partial #1}}}  % d/d#1 
+                                                % (the vector field)
+%\renewcommand{\d}{\,\mathsf{d}}   % Sometimes used as the "d" in an 
+                                  % integral.
+
+%%% Geometric and topological objects:
+
+\newcommand{\area}{\operatorname{Area}\nolimits}
+\newcommand{\dist}{\operatorname{dist}}  
+\newcommand{\length}{\operatorname{Length}\nolimits}
+\newcommand{\vol}{\operatorname{Vol}\nolimits}
+ 
+\newcommand{\un}{{\mathbf n}}       % Unit Normal.
+\newcommand{\ut}{{\mathbf t}}       % Unit Tangent.
+\newcommand{\ub}{{\mathbf b}}       % Unit Binormal.
+\newcommand{\ii}{\text{\sl I\!I}}   % Second fundamental form
+
+%%% Misc.
+
+\newcommand{\cd}{,\dots,}      % Commas with Dots. i.e. ,...,
+\newcommand{\e}{\varepsilon}   % epsilon that looks small.
+\newcommand{\ol}{\overline}   % OverLine
+\newcommand{\cn}{\colon}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\newcommand{\hint}{\emph{Hint:} }
+
+
+
+\newcounter{ProbCount}
+
+\newcommand{\prob}{\stepcounter{ProbCount}
+{\noindent{\bf \arabic{ProbCount}.} }}
+
+\newcounter{SubProbCount}[ProbCount]
+%\stepcounter{subpr}
+\newcommand{\sub}{\stepcounter{SubProbCount}(\alph{SubProbCount}) }
+
+\newcommand{\an}{\emph{Answer:} }
+\newcommand{\sol}{\smallskip \emph{Solution:  }}
+
+
+
+%%% Title
+
+\title[]{}
+
+%%% Subject and keyword information:
+
+%\subjclass[2000]{}
+%\keywords{}
+
+
+\begin{document}
+ 
+
+\thispagestyle{empty}
+
+
+\centerline{\Large\bf Mathematics 300 Homework, \today.}\bigskip
+
+
+Here are some examples of showing existence results.
+
+\prob Show that there exist integers $x$ and $y$ such that
+$x^2+y^2=25$.
+
+\prob Show that every even integer is the sum of two odd integers.
+
+\prob Show that every even number between 20 and 30 inclusive is the sum
+of two prime numbers.
+\bigskip
+
+Read Chapter 8 up to Section 8.4 (that is pages 131--139).  
+On Page 145 do Problems 1, 3, 7, and 27.
+
+\newpage
+
+\begin{proof}[Solution to Problem 1]
+Let $x=3$ and $y=4$, then $x^2+y^2=3^2+4^2=9+16=25$.  This shows the
+existence of integers $x$ and $y$ with $x^2+y^2=25$.
+\end{proof}
+
+
+\begin{proof}[Solution to Problem 2]
+Before starting the proof let us look at some examples:
+\begin{align*}
+2&= 1+1\\
+4 & = 3+1\\
+6 &= 5+1\\
+8&= 7+1\\
+10 &= 9+1
+\end{align*}
+
+Let us now do the proof:  Let $a$ be an even integer.  Then $a=2k$ for
+some integer $k$  Now write
+$$
+a = 2k = (2k-1)+1 .
+$$
+This shows that $a$ is the sum of the odd numbers $2k-1$ and $1$.
+\end{proof}
+
+
+\begin{proof}[Solution to Problem 3]
+We just exhibit each even number $n$ with $20\le n \le 30$ as a sum of 
+two primes.
+\begin{align*}
+20 &=3+17\\
+22 & = 3 + 19\\
+24 &= 5+ 19\\
+26 & = 3 + 23\\
+28 & = 5 + 23\\
+30 & = 7+23.
+\end{align*}
+
+
+One of the most famous unsolved problems in mathematics
+is to show that every even number greater than $4$ is
+the sum of two primes.  This was conjectured by the 
+German mathematician Christian Goldbach in 1742.  In the 275 years since then
+many people have worked on this, but it unproved. It is know that
+even even number greater than $4$ but 
+less than $4{,}000{,}000{,}000{,}000{,}000{,}000$ is the sum of two 
+primes.  
+\end{proof}
+
+
+
+
+
+
+\end{document}
+
+**********************************
+ 
+ \includegraphics[scale=1]{graph.pdf}
+
+ or
+
+\begin{figure}[hb]
+\includegraphics[scale=1]{graph.pdf}
+\caption[]{}
+\label{}
+\end{figure}
+
+parameters are    height  ,  width  ,   angle
+
+**********************************
+
+
+
+\begin{figure}[hb]
+\centering
+\input{graph1.eepic}
+\caption[]{}
+\label{}
+\end{figure}
+
+
+
+
