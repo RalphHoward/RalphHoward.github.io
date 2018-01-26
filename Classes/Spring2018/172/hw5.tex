@@ -1,0 +1,336 @@
+%%%  This document is a LaTeX2e document 
+%%%  It uses the AMS article style  
+
+\documentclass[11pt]{amsart}
+ 
+%%% Make more symbols available 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+
+
+%%% More flexible enumerate environments.
+
+\usepackage{enumerate}
+
+
+%%% Some packages useful for graphics 
+% \usepackage{bezier}
+\usepackage{epic,eepic}	
+%\usepackage{epsfig}            % For postscript
+\usepackage{graphicx}
+ 
+%%% Bold Italic font.  My convention is to use this font when defining
+%%% terms. The usage is the same as \emph{}
+
+\newcommand{\bi}[1]{{\bf\itshape #1\/}}  % Bold Italic (used for def'ing 
+                                  % terms) 
+ 
+
+\newcommand{\eq}[1]{~\eqref{#1}}
+
+%%%
+%%%  Sized delimiters.  Note \( and \) and \[ \] override
+%%%  LaTeX's start and stop math mode
+%%%
+
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+
+%%%  For Marginal Notes.  Useful during editing, especially with 
+%%%  several authors involved.
+
+\catcode`@=11 \@mparswitchfalse  %This puts the \mnote's on the right.
+
+\newcounter{mnotecount}[section]
+\renewcommand{\themnotecount}{\thesection.\arabic{mnotecount}}
+\newcommand{\mnote}[1]
+{\protect{\stepcounter{mnotecount}}$^{\mbox{\footnotesize  $%\!\!\!\!\!\!\,
+      \bullet$\themnotecount}}$ \marginpar{\null\hskip-9pt\vskip-30pt\raggedright\tiny\em
+      \themnotecount:\! #1} }
+%\newcommand{\mnote}[1]{}	 %Deletes mnotes for a final copy
+
+
+\newcommand{\ralph}{{\tiny \bf *RH*} } % For labeling a \mnote as 
+                                        % being by Ralph Howard.
+%\newcommand{\co}{{\tiny\bf *CA*} }  % For labeling a \mnote as 
+                                        % being by Co Author.
+
+
+%%%  Theorem type environments
+
+% \newtheorem{theorem}{Theorem}  % I have used this for theorems in 
+                 % the introduction for labeling independent of the
+                 % rest of the document. 
+
+%\swapnumbers  % Changes num Theorem to Theorem num.  Only effects the   
+               % environments listed below it.
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{claim}[thm]{Claim}
+ 
+\theoremstyle{definition}
+
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+%\newtheorem{prob}{{\bf Problem}}
+
+
+%%%%%% My standard abbreviations for mathematical symbols.  Some 
+%%%%%% have variants for compatibility with coauthors. 
+
+%%% Standard algebraic objects:
+
+
+%%% Derivatives:
+
+\newcommand{\f}{\partial}    
+%\newcommand{\p}[1]{{\frac{\partial}{\partial #1}}}  % d/d#1 
+                                                % (the vector field)
+%\renewcommand{\d}{\,\mathsf{d}}   % Sometimes used as the "d" in an 
+                                  % integral.
+
+%%% Geometric and topological objects:
+
+\newcommand{\area}{\operatorname{Area}\nolimits}
+\newcommand{\dist}{\operatorname{dist}}  
+\newcommand{\length}{\operatorname{Length}\nolimits}
+\newcommand{\vol}{\operatorname{Vol}\nolimits}
+ 
+\newcommand{\un}{{\mathbf n}}       % Unit Normal.
+\newcommand{\ut}{{\mathbf t}}       % Unit Tangent.
+\newcommand{\ub}{{\mathbf b}}       % Unit Binormal.
+\newcommand{\ii}{\text{\sl I\!I}}   % Second fundamental form
+
+%%% Misc.
+
+\newcommand{\cd}{,\dots,}      % Commas with Dots. i.e. ,...,
+\newcommand{\e}{\varepsilon}   % epsilon that looks small.
+\newcommand{\ol}{\overline}   % OverLine
+\newcommand{\cn}{\colon}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\newcommand{\hint}{\emph{Hint:} }
+
+
+
+\newcounter{ProbCount}
+
+\newcommand{\prob}{\stepcounter{ProbCount}
+{\noindent{\bf \arabic{ProbCount}.} }}
+
+\newcounter{SubProbCount}[ProbCount]
+%\stepcounter{subpr}
+\newcommand{\sub}{\stepcounter{SubProbCount}(\alph{SubProbCount}) }
+
+\newcommand{\an}{\emph{Answer:} }
+\newcommand{\sol}{\smallskip \emph{Solution:  }}
+
+
+
+%%% Title
+
+\title[]{}
+
+%%% Subject and keyword information:
+
+%\subjclass[2000]{}
+%\keywords{}
+
+
+\begin{document}
+ 
+
+\thispagestyle{empty}
+
+
+\centerline{\Large\bf Mathematics 172 Homework}\bigskip
+
+We have seen that for an annual  organism that lives and reproduces once a year
+and has an average number of $\lambda$ offspring that survive to the next year 
+that if $P_t$ is the population size in year $t$ that
+$$
+P_{t+1} = \lambda P_t
+$$
+where $\lambda$ is the \bi{finite growth rate}.  This says that
+to get the size of the population in year $t+1$ we just multiply
+the population size in year $t$ by $\lambda $.
+
+Let 
+$$
+P_0 = \text{Size of initial population.}
+$$
+Then we can get the size of the populations for the first several years:
+\begin{align*}
+P_1 &=\lambda P_0 = P_0 \lambda\\
+P_2 &= \lambda P_1 = \lambda P_0\lambda = P_0 \lambda^2\\
+P_3 &= \lambda P_2 = \lambda P_0\lambda^2 = P_0 \lambda^3\\
+P_4 &= \lambda P_3 = \lambda P_0\lambda^3 = P_0 \lambda^4\\
+P_5 &= \lambda P_4 = \lambda P_0\lambda^4 = P_0 \lambda^5\\
+P_6 &= \lambda P_5 = \lambda P_0\lambda^5 = P_0 \lambda^6\\
+P_7 &= \lambda P_6 = \lambda P_0\lambda^6 = P_0 \lambda^7\\ 
+\end{align*}
+At this point you see the pattern:
+$$
+P_t= P_0 \lambda^t.
+$$
+
+\begin{example}
+One of the best known examples of an annual insects is the annual 
+cicada which supply so much of the outdoors sound track
+here is South Carolina in the late summer.
+Assume that $20$ 
+cicadas are introduced on an island and that the 
+finite growth rate for them is $\lambda = 5.5$ cicadas/cicada.
+Then what is a formula for the number of cicadas after $t$ years?
+How many cicadas are there in five years?  How many long until there
+are a million rats?  
+\end{example}
+
+\sol In this case we have $P_0= 20$ and 
+$\lambda = 5.5$  Therefore the formula 
+for the number in $t$ years is
+$$
+P_t = P_0 \lambda^t = 20 (5.5)^t.
+$$
+Therefore after ten years, that is $t=5$, the number of cicadas is
+$$
+P_{10}= 10(5.5)^{5} = 100{,}656.875\text{ cicadas}.
+$$
+(This can be rounded to the nearest cicada to get $P_5 \approx  100{,}657$ 
+cicadas.
+Finally to see how long until a million cicadas we want to solve:
+$$
+20(5.5)^t = 1{,}000{,}000 = 10^6,
+$$
+This gives
+$$
+(5.5)^t = (10^6)/20
+$$
+and therefore
+$$
+t \ln(5.5) = \ln\( 10^6/20\)
+$$
+and thus
+$$
+t = \ln\( 10^6/20\)/  \ln(5.5) = 6.3468487 \text{ years.}
+$$
+
+\prob 
+In a backyard someone introduces $13$ annual weeds.  Let $P_t$
+be the number of weeds $t$ year later.  Assume that 
+the finite growth rate of the weeds is $3.3$ weeds/weed each year.
+
+(a) Give a formula for the number of weeds after $t$ year.
+
+(b)  How long until there are a million weeds in the yard?
+
+(c) How many are there after a $52$ years.)
+
+\sol (a) $P_t = 13 (3.3)^t$.  (b) Solve $13(3.3)^t = 10^6$ to get
+$t = 9.423$ year,  (c) $P_{52} = 13(3.3)^{52} = 1.1931 \times 10^{28}$
+weeds.
+
+\begin{example}
+Assume that $25$ sunflowers are introduced into a large field.  Sunflowers
+are annuals.  Assume that after three years there are $40$ sunflowers in
+the field.  Use this information to find a formula for the number of sunflowers
+after $t$ years and use this to predict the number that will be in the field
+after $10$ years.
+
+\sol The number is $P_t=P_0\lambda^t$.  We know that $P_0=25$, but we 
+still have to find $\lambda$.  We have
+$$
+P_3 = 25 \lambda^3 = 40.
+$$
+This leads to
+$$
+\lambda^3 = (40/25)
+$$
+and thus
+$$
+\lambda = (40/25)^{1/3} = 1.1696\ .
+$$
+Therefore
+$$
+P_t = 25 (1.1696)^t
+$$
+Therefore the number after $10$ years is
+$$
+P_{10} = 25*(1.1696)^{10} = 119.77 \text{ sunflowers}.
+$$
+\end{example}
+
+\prob Chickweed (Stellaria media) is an annual plant that is considered a weed.
+Assume that $9$ chickweeds are introduced into a large park and that $5$ 
+years later there are $100$ chickweeds in the park.  
+
+(a) Find a formula
+for the both the number of chickweeds in the park after $t$ years. 
+
+(b)  How many chickweeds are there in
+the park after $10$ years?  
+
+(c) How long until there are  $10{,}000$ chickweeds 
+in the park?
+
+\sol (a) First show that $\lambda =1.61864$ and 
+therefore $P_t= 9(1.61864)^t$.  
+(b) $P_{10} = 9(1.61864)^{10}= 1{,}111.1$ chickweeds.  
+(c) $t=9.7812$ years.  
+\bigskip
+
+
+\centerline{\includegraphics[scale=.40]{../Images/Chickweed.jpg}}
+\bigskip
+
+\centerline{Photo of Chickweed.}
+\bigskip
+
+
+
+
+
+
+\end{document}
+
+**********************************
+ 
+ \includegraphics[scale=1]{graph.pdf}
+
+ or
+
+\begin{figure}[hb]
+\includegraphics[scale=1]{graph.pdf}
+\caption[]{}
+\label{}
+\end{figure}
+
+parameters are    height  ,  width  ,   angle
+
+**********************************
+
+
+
+\begin{figure}[hb]
+\centering
+\input{graph1.eepic}
+\caption[]{}
+\label{}
+\end{figure}
+
+
+
+
