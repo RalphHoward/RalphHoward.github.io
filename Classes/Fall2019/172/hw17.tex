@@ -1,0 +1,457 @@
+
+%%%  This document is a LaTeX2e document
+%%%  It uses the AMS article style
+
+\documentclass[11pt]{amsart}
+\usepackage{enumerate}
+
+%%% Make more symbols available
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{overpic}
+
+%%% Some packages useful for graphics
+% \usepackage{bezier}
+\usepackage{epic,eepic}
+%\usepackage{epsfig}            % For postscript
+\usepackage{graphicx}
+
+%%% Bold Italic font.  My convention is to use this font when defining
+%%% terms. The usage is the same as \emph{}
+
+\newcommand{\bi}[1]{{\bf\itshape #1\/}}  % Bold Italic (used for def'ing
+                                  % terms)
+
+
+\newcommand{\eq}[1]{~\eqref{#1}}
+
+%%%
+%%%  Sized delimiters.  Note \( and \) and \[ \] override
+%%%  LaTeX's start and stop math mode
+%%%
+
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+
+%%%  For Marginal Notes.  Useful during editing, especially with
+%%%  several authors involved.
+
+\catcode`@=11 \@mparswitchfalse  %This puts the \mnote's on the right.
+
+\newcounter{mnotecount}[section]
+\renewcommand{\themnotecount}{\thesection.\arabic{mnotecount}}
+\newcommand{\mnote}[1]
+{\protect{\stepcounter{mnotecount}}$^{\mbox{\footnotesize  $%\!\!\!\!\!\!\,
+      \bullet$\themnotecount}}$ \marginpar{\null\hskip-9pt\vskip-30pt\raggedright\tiny\em
+      \themnotecount:\! #1} }
+%\newcommand{\mnote}[1]{}	 %Deletes mnotes for a final copy
+
+
+\newcommand{\ralph}{{\tiny \bf *RH*} } % For labeling a \mnote as
+                                        % being by Ralph Howard.
+%assnewcommand{\co}{{\tiny\bf *CA*} }  % For labeling a \mnote as
+                                        % being by Co Author.
+
+
+%%%  Theorem type environments
+
+% \newtheorem{theorem}{Theorem}  % I have used this for theorems in
+                 % the introduction for labeling independent of the
+                 % rest of the document.
+
+%\swapnumbers  % Changes num Theorem to Theorem num.  Only effects the
+               % environments listed below it.
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{claim}[thm]{Claim}
+
+\theoremstyle{definition}
+
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem*{notdefn}{Negation of Definition of Continuity}
+
+\theoremstyle{remark}
+
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+% \newtheorem{prob}{{\bf Problem}}
+
+
+%%%%%% My standard abbreviations for mathematical symbols.  Some
+%%%%%% have variants for compatibility with coauthors.
+
+%%% Standard algebraic objects:
+
+
+%%% Derivatives:
+
+\newcommand{\f}{\partial}
+%\newcommand{\p}[1]{{\frac{\partial}{\partial #1}}}  % d/d#1
+                                                % (the vector field)
+%\renewcommand{\d}{\,\mathsf{d}}   % Sometimes used as the "d" in an
+                                  % integral.
+
+%%% Geometric and topological objects:
+
+\newcommand{\area}{\operatorname{Area}\nolimits}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\length}{\operatorname{Length}\nolimits}
+\newcommand{\vol}{\operatorname{Vol}\nolimits}
+
+\newcommand{\un}{{\mathbf n}}       % Unit Normal.
+\newcommand{\ut}{{\mathbf t}}       % Unit Tangent.
+\newcommand{\ub}{{\mathbf b}}       % Unit Binormal.
+\newcommand{\ii}{\text{\sl I\!I}}   % Second fundamental form
+
+%%% Misc.
+
+\newcommand{\cd}{,\dots,}      % Commas with Dots. i.e. ,...,
+\newcommand{\e}{\varepsilon}   % epsilon that looks small.
+\newcommand{\ol}{\overline}   % OverLine
+\newcommand{\cn}{\colon}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\newcommand{\ds}{\displaystyle}
+
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\N}{{\mathbb N}}
+
+\newcommand{\eqed}{\null\vskip-28pt\qed}
+
+\newcommand{\hint}{\emph{Hint:} }
+
+\newcommand{\qimplies}{\quad\text{implies}\quad}
+\newcommand{\qtext}[1]{\quad\text{#1}\quad}
+\newcommand{\comp}{{\mathcal C}}
+%
+% \newcounter{ProbCount}
+%
+% \newcommand{\prob}{\stepcounter{ProbCount}
+% {\noindent{\bf \arabic{ProbCount}.} }}
+%
+% \newcounter{SubProbCount}[ProbCount]
+% %\stepcounter{subpr}
+% \newcommand{\sub}{\stepcounter{SubProbCount}(\alph{SubProbCount}) }
+
+\newcommand{\an}{\emph{Answer:} }
+\newcommand{\sol}{\smallskip \emph{Solution:  }}
+
+\newcommand{\lhos}{l'h\^opital}
+\newcommand{\Lhos}{L'h\^opital}
+
+
+\newcounter{ProbCount}
+
+\newcommand{\prob}{\stepcounter{ProbCount}
+{\noindent{\bf \arabic{ProbCount}.} }}
+
+\newcounter{SubProbCount}[ProbCount]
+%\stepcounter{subpr}
+\newcommand{\sub}{\stepcounter{SubProbCount}(\alph{SubProbCount}) }
+
+% \newcommand{\an}{\emph{Answer:} }
+% \newcommand{\sol}{\smallskip \emph{Solution:  }}
+
+
+
+
+%%% Title
+
+\title[]{}
+
+%%% Subject and keyword information:
+
+%\subjclass[2000]{}
+%\keywords{}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\bf \large Mathematics 172 Homework.}
+
+
+
+Recall the plot to date on our study of age structured population growth.
+If we have three stages we let
+$$
+\vec n(t) = \[ \begin{matrix} n_1(t)& n_2(t) & n_3(t) \end{matrix}\]
+$$
+where $n_j(t)$ is the number of individuals in stage $j$ in year $t$.
+We have the \bi{Leslie matrix} 
+$$
+L = \[ \begin{matrix}
+f_1&f_2&  f_3\\
+p_1 & 0& 0 \\
+0& p_2& 0
+\end{matrix}\].
+$$
+In entries have the meanings
+\begin{align*}
+f_j&=\text{Fecundity of stage $j$ individuals}\\
+&= \text{average number of offspring to a stage $j$ individual.}\\ 
+p_j& =\text{Proportion of stage $j$ individuals that live to stage $j+1$.}
+\end{align*}
+The Leslie matrix tells us how the population changes from one year to the next:
+$$
+\vec n(t+1) = L \vec n(t).
+$$
+Thus if we know $\vec n(0)$ we can compute the numbers in the future by
+$$
+\vec n(t) = L^t\vec n(0).
+$$
+At least for matrices that are not too large this is easy to do on our calculators.
+
+One of the pieces of information that is \bi{age distribution} in year $t$.
+That is the proportion of the population that is in each stage.
+If
+$$
+\[ \begin{matrix} n_1(t)\\ n_2(t) \\ n_3(t) \end{matrix}\]
+$$
+then the total number of individuals is
+$$
+N(t) = n_1(t)+ n_2(t) + n_3(t) 
+$$
+and the age distribution is given by the vector
+$$
+\frac{1}{N(t)}\vec n(t)=
+\frac{1}{N(t)}\[ \begin{matrix} n_1(t)\\ n_2(t) \\ n_3(t) \end{matrix}\]
+=
+\[ \begin{matrix} \dfrac{n_1(t)}{N(t)}\\
+	\\ \dfrac{n_2(t)}{N(t)}\\ \\\dfrac{n_3(t)}{N(t)}\end{matrix}\]
+$$
+We computed many examples of this on Quiz 17.
+
+We have a \bi{stable age distribution} if the age distribution stays the same from year to year.  
+That this means is that for years $t$ and $t+1$ we have
+$$
+\frac{1}{N(t)}\vec n(t)=
+\frac{1}{N(t+1)}\vec n(t+1)
+$$
+which can be rewritten as
+$$
+\vec n(t+1)= \(\frac{N(t+1)}{N(t)}\)\vec N(t)=\lambda \vec N(t)
+$$
+where
+$$
+\lambda = \frac{N(t+1)}{N(t)}.
+$$
+But we also have
+$$
+\vec  n(t+1) = L \vec n(t).
+$$
+Comparing our two formulas for $\vec n(t)$ gives
+$$
+L \vec N(t) = \lambda \vec N(t).
+$$
+In this case we let
+\begin{align*}
+	\lambda&= \text{\bi{growth ratio}}\\
+	r = \lambda-1 & = \text{\bi{per capita growth rate.}}
+\end{align*}
+\bigskip
+
+This motivates the following.
+Let $L$ be a square matrix and $\vec n$ a vector and $\lambda$ a number.  Then $\vec n$ is
+an \bi{eigenvector} of $L$ with \bi{eigenvalue} $\lambda$ if and only 
+if 
+$$
+L \vec n = \lambda \vec n.
+$$
+What this means for us is that $L \vec n$ and $\vec n$ have the same age distribution.
+Thus in the context of our class saying that $\vec n$ is a eigenvector of $L$ is
+saying that $\vec n$ has the stable age distribution and that the eigenvector $\lambda$
+is the growth ratio.
+
+
+
+Let us see what this mean in concrete cases.  Let $L$ be the Leslie matrix
+$$
+L = \[ \begin{matrix}
+0&44&  890\\
+0.01 & 0& 0 \\
+0& 0.8& 0
+\end{matrix}\]
+$$
+and let
+$$
+\vec n = \[ \begin{matrix}
+4\\ 0.02\\ 0.009
+\end{matrix}\]
+$$
+
+\prob Show that
+$$
+L\vec n = \[ \begin{matrix}
+8\\ 0.04\\ 0.016
+\end{matrix}\]
+$$
+\qed
+
+Also note that
+$$
+2 \vec n = 2  \[ \begin{matrix}
+8\\ 0.04\\ 0.016
+\end{matrix}\]
+=   \[ \begin{matrix}
+2(8)8\\2( 0.04)\\ 2(0.016)
+\end{matrix}\]
+=  \[ \begin{matrix}
+8\\ 0.04\\ 0.016
+\end{matrix}\].
+$$
+Thus $\vec n$ is a eigenvector for $L$ with eigenvalue $2$.
+Therefore for this Leslie matrix the stable age distributions is
+$$
+\frac{1}{8+.02+.009}  \[ \begin{matrix}
+8\\ 0.04\\ 0.016
+\end{matrix}\]= 
+\[ \begin{matrix}
+0.99305\\
+0.00497\\
+0.00199
+\end{matrix}
+\],
+$$
+the growth factor is $\lambda = 2$ and $r = \lambda -1=1$ is the per capita 
+growth rate.
+\bigskip
+
+
+\prob Let $L$ be the Leslie matrix
+$$
+L= \[ \begin{matrix}
+0& 3.9& 15.25\\
+0.1& 0&0\\
+0&0.4& 0
+\end{matrix}\]
+$$
+\sub Show that
+$$
+\vec n = \[ \begin{matrix}
+100\\10\\4
+\end{matrix}\]
+$$
+is an eigenvector for $L$ with eigenvalue $\lambda=1$ and thus that
+per capita growth rate is $r = \lambda -1=0$.  
+
+\sub Find the stable age distribution. \sol It is
+$$
+\[ \begin{matrix}
+0.87719  \\ 0.08772  \\  0.03509
+\end{matrix}\]
+$$
+
+\sub If
+$$
+\vec n(0) = \[ \begin{matrix}
+100  \\ 0 \\  0
+\end{matrix}\]
+$$
+find $\vec n(1)$, $\vec n(2)$, $\vec n(5)$ and $\vec n(30)$ and the 
+age distribution of these vectors.
+
+\sol 
+$$
+\vec n(1) = \[\begin{matrix} 0 \\10 \\ 0\end{matrix}\]\quad \text{age distribution is}\quad
+\[\begin{matrix} 0 \\1.0 \\0 \end{matrix}\]
+$$
+$$
+\vec n(2) = \[\begin{matrix} 39 \\0 \\ 4\end{matrix}\]\quad \text{age distribution is}\quad
+\[\begin{matrix} 0.90698 \\ 0\\ 0.09302\end{matrix}\]
+$$
+$$
+\vec n(5) = \[\begin{matrix} 47.5800 \\1.5210 \\ 2.4400\end{matrix}\]\quad \text{age distribution is}\quad
+\[\begin{matrix} 0.92315 \\0.02951 \\0.04734 \end{matrix}\]
+$$
+$$
+\vec n(30) = \[\begin{matrix} 38.3362 \\3.8266 \\ 1.5343\end{matrix}\]\quad \text{age distribution is}\quad
+\[\begin{matrix} 0.87732 \\ 0.08757\\0.03511 \end{matrix}\]
+$$
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+**********************************
+ 
+
+*******  For loop diagrams
+*******
+\null\vskip.8in
+\begin{figure}[htb]
+\centering
+\begin{overpic}[width=4.5in]{loops.pdf}
+ \put(9,11){$1$}
+ \put(49,11){$2$}
+ \put(88,11){$3$}
+ \put(28,13){.11} %%% $p_1$
+ \put(67,13){.22} %%% $p_1$
+ \put(21,20){\includegraphics[scale=.40]{f1.pdf}}
+     \put(28,26){3.3}
+ \put(59,20){\includegraphics[scale=.40]{f1.pdf}}
+     \put(67,26){4.4}
+ \put(14,24){\includegraphics[scale=.47]{f3.pdf}}
+     \put(48,41){5.5}
+ \put(2,-17){\includegraphics[scale=.5]{bot.pdf}}
+ 	 \put(9,-13){6.6}
+ \put(40,-17){\includegraphics[scale=.5]{bot.pdf}}
+ 	 \put(48,-13){7.7}
+ \put(78,-17){\includegraphics[scale=.5]{bot.pdf}}
+ 	 \put(86,-13){8.8}
+\end{overpic}
+% \caption[]{}
+% \label{fig:name}
+\end{figure}
+\vskip.7in
+
+
+
+
+
+
+
+ \includegraphics[scale=1]{graph.pdf}
+
+ or
+
+\begin{figure}[hb]
+\includegraphics[scale=1]{graph.pdf}
+\caption[]{}
+\label{}
+\end{figure}
+
+parameters are    height  ,  width  ,   angle
+
+**********************************
+
+
+
+\begin{figure}[hb]
+\centering
+\input{graph1.eepic}
+\caption[]{}
+\label{}
+\end{figure}
+
+
+
+
