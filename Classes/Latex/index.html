@@ -1,0 +1,216 @@
+
+<html>
+<head><title>LaTeX Basics</title></head> 
+<body>
+<table  width=1000><td> <!-- setting width of whole page -->   
+
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" link="fff999" vlink="#DEDEDE">
+
+	<h1> <FONT COLOR="#FFCD39"> LaTeX Basics</FONT></h1>
+
+There are many reasons for learning to produce a LaTeX document.  The main one
+is that LaTeX is the de facto standard for the communication and publication of
+scientific documents.  Most journals in mathematics and many of the other
+sciences expect papers to be submitted in some form of LaTeX. It
+is not uncommon in some graduate classes that homework
+be submitted as LaTeX output.  And currently 
+(that is during the coronavirus pandemic) it is the best way to produce 
+papers that are easy to send by e-mail and easily read by the 
+recipient. 
+<p><p>
+
+
+If you already know how to produce a LaTeX document, you can 
+ignore most of the instructions here.  
+
+
+<p><p><p>
+Step 1: Getting started. <br>
+
+<li><b>Using your school email address</b>, register for a 
+(free) Overleaf account by going to  
+<a href="https://www.overleaf.com/register">Overleaf/register</a>. 
+
+
+
+
+<li>Next view the 2 minute video at 
+<a href="https://youtu.be/rLWT0z6yvrk">
+Writing a basic LaTeX document with overleaf</a>. 
+You should understand the first minute of the video 
+(0:00-1:02).  For the part after 1:02 (when he is 
+typing stuff such as \documentclass) just try to 
+get the idea of how to (re)compile a document.  
+
+
+<p><p><p>
+Step 2: Your first Latex Project<br>
+ 
+
+<li>Log into your Overleaf account at 
+<a href="https://www.overleaf.com/login">Overleaf</a>.
+
+<li>Select the <tt>New Project</tt> icon
+<font size=1>(left column  tool bar with green background)</font>, 
+and then from the drop down selection chose  <tt>Blank Project</tt>.
+<br>  
+A window should pop up asking you to  name your New Project.
+"Latex 1" is a reasonable name.
+<br>
+
+
+
+Delete the code in the source window and 
+take the following code and cut and paste it into Overleaf (or
+whatever you are using for LaTeX) and edit it to complete the 
+following three lines:
+<br>
+My name is
+<br>
+My major is
+<br>
+S=
+<br>
+
+Then compile it and send the resulting pdf to me with the 
+subject line: LaTeX 1.
+
+
+<pre>
+\documentclass{article}  % Tell LaTeX what type of document we are making.
+                         % Percent signs are used for comments and what is
+                         % to the right of them is ignored.
+
+\begin{document}  %  Start the document.
+
+
+Hello world.   (Included so as to not offend the Computer Gods.)
+
+
+
+Ordinary text (that is non mathematical text) is just typed
+as usual ordinary text.  But LaTeX will decide where the line
+breaks are.
+
+A new paragraph is started by leaving one or more blank lines.
+
+My name is 
+
+My major is 
+
+% Mathematical formulas in a line are put between \(  and \)
+
+The basic quadratic equation is \(ax^2 + bx + c =0\).  
+
+
+% Displayed mathematical formulas are put between \[ and \]
+
+This can be done in one line \[ ax^2+bx+c=0. \]
+But it is usually easier to read your code if you make it look
+displayed 
+\[
+  ax^2+bx+c=0.
+\]
+(LaTeX will not care, but if you are looking at your code a month after
+writing it you will.)
+
+Let us give a slightly more complicated displayed equation
+which gives a good idea of what general LaTeX looks like:
+\[
+	x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}.
+\]
+
+A basic formula in much of analysis is the sum of a geometric 
+series
+\[
+   \frac{a}{1-r}= a+ar + ar^2 + ar^3 + ar^4+ \cdots = \sum_{n=0}^\infty ar^n
+\]
+which converges for $|r|<1$.
+Thus if
+\[
+	S = 3 + 3 x + 3 x^2 + 2 x^3 + \cdots = \sum_{n=0}^\infty 3x^n
+\]
+we have
+\[
+  S =     %  You fill this in.
+\]
+
+\end{document}
+
+</pre>
+
+A point that is confusing at first is
+that in LaTeX there are several ways to do the same thing.  For
+example to do in line mathematics both
+<pre>
+\( ax^2 + bx + 2 \)
+</pre>
+and 
+<pre>
+$ a x^2 + bx + c $
+</pre> 
+give the same output. Worse yet is displayed formulas where
+all three of 
+<pre>
+\[
+a x^2 + bx + c
+\]
+</pre> 
+<pre>
+$$
+a x^2 + bx + c
+$$
+</pre>
+and
+<pre>
+\begin{equation*}
+a x^2 + bx + c
+\end{equation*}
+</pre>
+all give the same output.  So in some of the videos recommended 
+below things will look a bit different than what I have above.
+You and use whatever you find easiest for you.
+</ul>
+
+  
+
+
+<p>
+<h3>Some useful LaTeX resources:</h3>
+   
+<p>
+
+<ul >
+      
+<li><a href="https://www.overleaf.com/login">Overleaf</a>.
+Overleaf used to be named ShareLaTeX.  Under this name
+they have nice series of videos explaining both LaTeX
+and Overleaf.  If you are not use to LaTeX you should watch
+the first three of these:<br><br>
+<a href="https://www.overleaf.com/learn/latex/LaTeX_video_tutorial_for_beginners_(video_1)">LaTeX video tutorial for beginners (video 1)</a><br>
+<a href="https://www.overleaf.com/learn/latex/LaTeX_video_tutorial_for_beginners_(video_2)"> LaTeX video tutorial for beginners (video 2)</a><br>
+<a href="https://www.overleaf.com/learn/latex/LaTeX_video_tutorial_for_beginners_(video_3)">LaTeX video tutorial for beginners (video 3) </a><br>
+<br>  
+
+
+
+  
+<li><a href="http://detexify.kirelabs.org/classify.html">Detexify</a>,
+  just draw the math symbol and it tell you the LaTex code.
+
+<li><a href="https://www.youtube.com/playlist?list=PLF975D9D3C9B50FF7">Introduction to LaTeX Videos</a> (by Prof. Robert Talbert)  
+ along with the  accompanying<br>
+  <a href="https://www.dropbox.com/s/cnkz1cic9w6w56i/latex-examples.pdf?dl=0">LaTeX Examples</a> (licensed by Ted Sundstrom)
+  of examples of commonly used math symbols. 
+
+
+  <h3> Acknowledgement:</h3>
+This page is an edited version of one written by
+<a href="http://people.math.sc.edu/girardi/">Maria Girardi.</a>
+
+
+<!-- </table> -->
+
+</table> <!-- ending width of whole page --> 
+</body> 
+</html>
