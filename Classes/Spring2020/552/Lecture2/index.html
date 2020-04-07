@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Laurent Series</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+
+<h3> Laurent Series in an annulus.</h3> 
+
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+<br>
+<br>
+
+
+We have seen that if \(f(z)\) is analytic in a disk \(B(z_0,R)
+=\{z : |z-z_0| \lt r\}\), then \(f(z)\) has a  power series
+expansion 
+\[
+f(z) = \sum_{n=0}^\infty c_n (z-z_0)^n
+	  \]
+</p>
+
+<p>
+which converges absolutely in this disk.  We now consider
+the case of function analytic in an <b> annulus</b> which
+is the set between two concentric circles:
+\[
+A(z_0,r,R) = \{ z : r\lt |z-z_0|\lt R\}.
+\]
+
+
+ <img src="./ann.jpg" alt="annulus" width="500" style="float:right;width:400px;height:400px;"> 
+
+As we outlined  in class on Friday such a function has an expansion
+\[
+f(z)= \sum_{n=-\infty}^\infty c_n (z-z_0)^n
+\]
+which is convergent in the annulus.  The difference between
+this and the regular power series is that \(n\) is allowed to have
+negative values. <br><br>
+
+We prove this under the
+slightly stronger condition that \(f(z)\) is analytic in 
+the slightly larger region defined by \( r\le |z-z_0|\le R\).
+Then for \(z \in A(z_0,r,R)\) the Cauchy Integral Formula 
+gives that
+\[
+f(z) = \frac1{2\pi i} \int_{\partial A(z_0,r,R)} \frac{f(w)}{w-z}\,dw
+\]
+
+<br>
+<b>Problem 1:</b>
+Explain why this implies for \(z\in A(z_0,r,R)\) that 
+\[
+f(z) = \frac1{2\pi i} \int_{|w-z_0|=R} \frac{f(w)}{w-z}\,dw
+- \frac1{2\pi i} \int_{|w-z_0|=r} \frac{f(w)}{w-z}\,dw.
+\]<br>
+<b>Solution:</b>
+<br>
+ <video width="640" height="480" controls>
+  <source src="vid2_1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+Now on the integral over \(|w-z_0| = R\) and for \( z \in A(z_0,r,R) \)
+we have \( |z-z_0| \lt R =|w-z_0| \).  Therefore the number 
+\[
+\left | \frac{z-z_0}{w-z_0}\right|\lt 1
+\]
+<br>
+
+Use this to show that \( \dfrac1{w-z}\) can be expanded in
+a convergent series in powers of \((z-z_0)\) for \(z\in  A(z_0,r,R)\)
+and \(|w-z_0| =R\). <br> 
+
+
+ <video width="640" height="480" controls>
+  <source src="vid2_2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+<br>
+<b>Problem 2:</b>
+Now use this to show that \[\frac1{2\pi i} \int_{|w-z_0|=R} \frac{f(w)}{w-z}\,dw\]
+can be expanded in a convergent series in powers of \( (z-z_0)\).
+<br>
+<b>Solution:</b>
+<br>
+
+
+ <video width="640" height="480" controls>
+  <source src="vid2_3.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+We now play the same game with the integral 
+\[\frac1{2\pi i} \int_{|w-z_0|=r} \frac{f(w)}{w-z}\,dw\]
+In this case if \(z\in  A(z_0,r,R)\) and \(|w-z_0|=r\)
+we have that the fraction 
+\[
+\left| \frac{w-z_0}{z-z_0} \right| \lt 1
+\]
+so this time we try to expand in powers of the reciprocal 
+\( \dfrac1{z-z_0}\) .   
+
+<br>
+<b>Problem 3:</b>
+As a first step you should show that when
+\(|w-z_0|=r\) and \( z\in  A(z_0,r,R)\) that \(\dfrac 1{w-z_0}\)
+can be expanded as a convergent series in  powers of
+\( \dfrac1{(z-z_0)} \).<br>
+<br>
+<b>Solution:</b>
+<br>
+
+
+
+ <video width="640" height="480" controls>
+  <source src="vid2_4.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+<br>
+<b>Problem 4:</b>
+Looking back at Problem 1, we see that one of the terms 
+in our formula for $f(z)$ is 
+\[
+- \frac1{2\pi i} \int_{|w-z_0|=r} \frac{f(w)}{w-z}\,dw.
+\]  
+Show that this can be expanded in a convergent series 
+in powers of \( \dfrac1{(z-z_0)} \).
+
+
+
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+  <source src="vid2_5.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+Putting together what we have done so far we have
+for \( z \in A(z_0,r,R) \)
+\begin{array}{rl}f(z)&=  \displaystyle
+\frac1{2\pi i} \int_{|w-z_0|=R} \frac{f(w)}{w-z}\,dw
+- \frac1{2\pi i} \int_{|w-z_0|=r} \frac{f(w)}{w-z}\,dw\\
+&= \displaystyle \sum_{n=0}^\infty c_n (z-z_0)^n +
+\sum_{n=0}^\infty a_{n+1} (z-z_0)^{n+1}
+\end{array}
+In this second sum as the terms are \(a_{n+1}(z-z_0)^{n+1}= a_{n+1}(z-z_0)^{-(n+1)}\)
+and \( n \) goes from \(0\) to \(\infty\).  Therefore the exponent
+\( -(n+1) \) goes from \( -1\) to \( - \infty\).  So if we set
+\(c_n = a_{-n}\) we and rewrite the second sum as
+\[
+\sum_{n=0}^\infty a_{n+1} (z-z_0)^{n+1}= \sum_{n=-\infty}^{-1} c_n (z-z_0)^{n}.
+\]
+Therefore we can combine these two sums into a single sum:
+\[
+f(z) = \sum_{n=-\infty}^\infty c_n (z-z_0)^n.
+\]
+We summarize this as a theorem.
+<br>
+<br>
+<b>Theorem on Laurent Series Expansion:</b> Let
+\(f(z)\) be analytic in an annulus \( A(z_0,r,R) \) .
+Then \(f(x)\) has a convergent series expansion
+\[
+f(z) = \sum_{n=-\infty}^\infty c_n (z-z_0)^n
+\]
+in this annulus.
+<br><br>
+
+With just a little more care then what we have done here it 
+this can be extend to the cases where \(r=0\) (which will shortly 
+be important to us) and \(R=\infty\).
+
+<br>  It would be nice to have a formula for the coefficients \(c_n\)
+in the Laurent expansion.  By being careful in the proof we gave
+for the existence of the expansion we could have kept track of
+what they are.  But it is easier to just derive a what they are
+directly form the series and the following fact.
+<br>
+
+Let \(m\) be an integer (positive, negative, or zero).  Then
+\[
+\int_{|z-z_0|=r} (z-z_0)^{m} \,dz = \begin{cases} 0,& m\ne -1;\\ 2\pi i,& m=-1.
+\end{cases}
+\]
+We have done this calculation enough times that I am not going
+to repeat it here. Use this to do the following:
+
+<br>
+<b>Problem 5:</b>
+Let \(f(z)\) have the Laurent expansion 
+\[
+f(z) = \sum_{n=-\infty}^\infty c_n (z-z_0)^n
+\]
+in the annulus \(A(z_0,r,R)\) and let \(r\lt \rho \lt R\).  Then 
+\[
+c_n = \frac{1}{2\pi i} \int_{|z-z_0|=\rho} \frac{f(z)}{(z-z_0)^{n+1}} \,dz.
+\]
+
+
+
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+  <source src="vid2_6.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+
+
+
+
+
+</p>
+</body>
+</html>
