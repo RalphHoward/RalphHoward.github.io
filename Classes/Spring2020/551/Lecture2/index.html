@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Geoseics on Surfaces.</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+
+<h3>Geodesics on Surfaces in \(\mathbb R^3\)</h3> 
+
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+<br>
+<br>
+
+Here is the problem we wish to understand.  Let \( M\) be a surface in 
+\(\mathbb R^3\) and let \(p\) and \(q\) be points of \(M\).  Then we
+want a description of the curve in \(M\) of shortest length.  
+That is for all curves \(\mathbf c\colon [a,b]\to M\) with
+\(\mathbf c(a) = p\) and \(\mathbf c(b) = q\) we want the one 
+which is the shortest. (The more rigorously included among  will
+point out that we should first prove that such a shortest curve 
+exists.  I am not going to worry about that, but am going to assume
+it exists and describe its properties.)  
+<br>
+
+Before starting on this we review some vector calculus that will
+be used.
+
+<br>
+<b>Problem 1:</b>
+Let \( \pmb \beta \colon [a,b] \to \mathbb R^3\) be a \( C^1\) curve.
+Than at points where \(\pmb \beta(t)\ne \mathbf 0\) show
+\[
+\frac d{dt} \| \pmb\beta (t) \| =\left( \frac{\pmb\beta(t)}{\|\pmb\beta(t)\|}\right) 
+\cdot \pmb \beta'(t)=\widehat{\pmb\beta}(t)\cdot \pmb\beta'(t).
+\]
+where \( \widehat{\pmb\beta}(t)\) is the unit vector in the direction
+of \(\pmb \beta(t)\).
+
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+  <source src="vid2_1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+Let us note for future reference that if we have a function
+\( \mathbf f \colon (a,b)\times (c,d) \to \mathbb R^3\) of two variables
+with values in \(\mathbb R^3\) that holding \(s\) fixed and letting
+and we let 
+\[
+\pmb \beta (t) = \frac{\partial \mathbf f}{\partial s}(s,t) = \mathbf f_s(s,t)
+\]
+\( \pmb \beta(t) = \mathbf f(s,t)\) then Problem 1 gives us that 
+\[
+\frac{\partial}{\partial t} \| \mathbf f_s\| = \left(\frac{\mathbf f_s}{\| \mathbf f_s\|}\right)
+ \cdot \mathbf f_{st}
+\]
+as in this case \(\pmb \beta'(s)= \mathbf f_{st}\).  
+<br>
+<br>
+
+Now assume that \(\mathbf c \colon [a,b] \to M \) is a \(C^2\) curve in our surface
+\(M\) such that it has the shortest length of all the curves that connect \(
+\mathbf c(a)\) and \(\mathbf c(b)\).  We can parameterize \(\mathbf c\) by
+arclength and thus assume it is unit speed.  That is \(\| \mathbf c'(s)\|=1 \)
+for all \(s\).  We now look at a bunch of curves that are close to \(\mathbf
+c\) and have the same endpoints.  An explicit method of doing this is to let \(
+\delta \gt 0\) be a small positive number and let \( \mathbf f\colon [a,b]
+\times (-\delta,\delta) \to M \) be a function such that
+\[
+\mathbf f(s,0) = \mathbf c(s) \qquad \text{(that is \(t=0\) gives our minimizing curve.)}
+\]
+\[
+\mathbf f(a,t) = \mathbf c(a) \qquad \text{ for all \(t\in (-\delta,\delta)\)}
+\]
+\[
+\mathbf f(b,t) = \mathbf c(b) \qquad \text{ for all \(t\in (-\delta,\delta)\)}
+\]
+Such a function is called a <i><b>variation of \(\mathbf c\) with fixed endpoints
+	</b></i>.  One way to think of these variations is that
+for each fixed \(t\) the curve \(\mathbf c^t(s) = \mathbf f(s,t)\) (we use
+superscripts rather than subscripts to avoid confusion with partial 
+derivatives) is a curve with the same endpoints as \(\mathbf c\)
+and with \(\mathbf c^0=\mathbf c\).  Thus as \(t\) varies over \((-\delta,
+\delta)\) the family of curves \( \{ \mathbf c^t\}_{t\in (-\delta,\delta)}\)
+is a bunch of curves with the same endpoints as \(\mathbf c\) and
+with \(\mathbf c^0=\mathbf c\).
+<br>
+<br>
+
+<b> Problem 2:</b> 
+Draw some picture of some variations of a curve with fixed endpoints.
+For what we are doing probably the best way to do this is to start with
+a curve \(\mathbf c\) and then draw the curves \( \mathbf c^t(s) = \mathbf f(s,t)\)
+for some values of \(t\).
+
+
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+  <source src="vid2_2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+
+We are assuming that \(\mathbf c\) is the shortest curve between the
+points \(\mathbf c(a)\) and \( \mathbf c(b)\).  As all the curves
+\(\mathbf c^t\) have the same endpoints as \(\mathbf c\) the
+function \( L \colon (-\delta,\delta) \to \mathbb R\) given by
+\[
+L(t) = \text{Length of the curve \(\mathbf c^t\)}
+\]
+has a minimum at $t=0$.   
+<br><br>
+
+<b>Problem 3:</b>  Show that \(L(t)\) is given by the formula
+\[
+L(t) = \int_a^b \| \mathbf f_s(s,t)\|\,ds = \int_a^b \|\mathbf f_s\|\,ds.
+\]
+
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+  <source src="vid2_3.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+You have likely guessed the next step: since \(L(t)\) has a minimum at 
+\(t=0\) so, by the first derivative test \(L'(0)=0\).  
+
+<br>
+<b>Problem 4:</b>
+Use that \(\mathbf c\) is unit speed, so that \(\|\mathbf c'(s)\|
+= \| \mathbf f_s(s,0)\|\) to show 
+\[
+L'(0)= \int_a^b \mathbf c'(s)\cdot \mathbf f_{st}(s,0) \,ds.
+\]
+
+
+<video width="640" height="480" controls>
+  <source src="vid2_4.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+
+We wish simplify this formula for \(L'(0)\).  This will involve 
+do an integration by parts.  Recall that our variation \(\mathbf f\)
+of \(c\) has its endpoints fixed.  That is
+\[
+\mathbf f(a,t)= \mathbf c(a), \qquad \mathbf f(b,t) = \mathbf c(b).
+\]
+Taking the derivatives of these equation with respect to \(t\) and using
+that they are constant with respect to \(t\) gives
+\[
+\mathbf 0 = \frac{\partial \mathbf f}{\partial t}(a,t) = \mathbf f_t(a,0),
+\qquad 
+\mathbf 0 = \frac{\partial \mathbf f}{\partial t}(b,t) = \mathbf f_t(b,0)
+\]
+
+<br>
+<b>Problem 5:</b>
+Using these equations and our formula and integration by parts to
+show that our formula for \(L'(0)\) can be rewritten as 
+\[
+L'(0) = -\int_a^b \mathbf c''(s) \cdot \mathbf f_t(s,0)\,ds.
+\]
+
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+	   <source src="vid2_5.mp4" type="video/mp4">
+	   Your browser does not support the video tag.
+ </video><br>  
+
+ So far we have not used any of the geometry of surfaces (first and second
+ fundamental forms etc.)  We now do that.  As \( \mathbf c\) is a curve
+ in our surface if \( \text{II} \) is the second fundamental form
+ of \(M\) we have
+ \[
+ \mathbf c''(s) = \nabla_{\mathbf c'(s)} \mathbf c'(s) + \text{II}(\mathbf c'(s),
+ \mathbf c'(s))\mathbf n.
+ \] 
+where \(\mathbf n\) is the unit normal to the surface and 
+\( \nabla_{\mathbf c'(s)} \mathbf c'(s)\) is the projection of \(\mathbf c''(s)\)
+onto the tangent plane to \(M\) at \(\mathbf c(s)\).
+
+
+<br>
+<b>Problem 6:</b>  Using the formula above for \(\mathbf c''(s)\) show that
+the formula for \(L'(0)\) can be rewritten as
+\[
+L'(0) = - \int_a^b \left(\nabla_{\mathbf c'(s)} \mathbf c'(s)\right) \cdot \mathbf f_t(s,0)\,ds.
+\]
+
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+	   <source src="vid2_6.mp4" type="video/mp4">
+	   Your browser does not support the video tag.
+ </video><br>  
+
+We and summarize what we have done so far as 
+<br>
+<br>
+
+<b>Theorem.</b>  Let \(\mathbf c [a,b] \to M\) be a curve 
+that minimizes length for all curves in \(M\) connecting \(\mathbf
+c(a)\) and \(\mathbf c(b)\).  Then for all variations, \(\mathbf f\)
+with endpoints fixed we have
+\[
+L'(0)= -\int_a^b \left( \nabla_{\mathbf c'(s)} \mathbf c'(s)\right)\cdot \mathbf f_t(s,0)\,ds=0.
+\]
+<br>
+<br>
+
+Note if \( \nabla_{\mathbf c'(s)} \mathbf c'(s)=\mathbf 0\) for all \(s\in [a,b]\)
+then we will have \(L'(0)=0\).  There is a converse to this.
+<br><br>
+
+<b>Theorem.</b> Let \(\mathbf c [a,b] \to M\) be a curve 
+such that for all  variations, \(\mathbf f\)
+with endpoints fixed we have 
+\[
+-\int_a^b \left( \nabla_{\mathbf c'(s)} \mathbf c'(s)\right)\cdot \mathbf f_t(s,0)\,ds=0.
+\]
+Then \(  \nabla_{\mathbf c'(s)} \mathbf c'(s)=\mathbf 0\).  
+<br><br>
+
+This is not outrageously hard to prove, the idea is to constrict 
+very many variations of \(\mathbb c\) with fixed endpoints 
+so that the only way for the integral above to vanish for all of them
+is that if \(  \nabla_{\mathbf c'(s)} \mathbf c'(s)=\mathbf 0\).
+But the methods are more in line with Math 554 than our class so we will
+not give a proof. But this does suggest giving a name to the curves
+that make this true.
+<br>
+<br>
+
+<b>Definition.</b> A curve \( \mathbf c \colon [a,b] \to M\)
+such that 
+\[
+\nabla_{\mathbf c'(s)} \mathbf c'(s)=\mathbf 0
+\]
+for all \(s\) is a <b><i>geodesic</i></b> of \(M\).
+In light of the definition of \( \nabla_{\mathbf c'(s)} \mathbf c'(s)\)
+being the component of \(\mathbf c''(s)\) that is tangent to \(M\)
+anther way to say that \(\mathbf c\) is geodesic is to say that
+\(i\mathbf c''(s)\) is perpendicular to \(M\) at all its points.
+<br>
+<br>
+
+
+<br>
+<b>Problem 7:</b>
+Show that if \(\mathbf c\) is a geodesic of \(M\), then it has 
+constant speed.  That is \( \| \mathbf c'(s)\| \) is a constant.
+
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+	   <source src="vid2_7.mp4" type="video/mp4">
+	   Your browser does not support the video tag.
+ </video><br>  
+
+
+
+
+
+
+
+</p>
+</body>
+</html>
