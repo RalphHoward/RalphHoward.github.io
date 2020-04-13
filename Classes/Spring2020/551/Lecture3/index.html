@@ -25,30 +25,118 @@ before looking at the videos.
 <br>
 <br>
  <img src="pic3_1.png" alt="Polygon" style="float:right;width:400px;height:400px;"> 
-Here is the problem we wish to understand.  Let \( M\) be a surface in 
-\(\mathbb R^3\) and let \(p\) and \(q\) be points of \(M\).  Then we
-want a description of the curve in \(M\) of shortest length.  
-That is for all curves \(\mathbf c\colon [a,b]\to M\) with
-\(\mathbf c(a) = p\) and \(\mathbf c(b) = q\) we want the one 
-which is the shortest. (The more rigorously included among  will
-point out that we should first prove that such a shortest curve 
-exists.  I am not going to worry about that, but am going to assume
-it exists and describe its properties.)  
+He we use the Gauss-Bennett Theorem to for a simply connected 
+region to generalize Euler's formula \(V-E+F=2\) which we proved
+for the sphere to more general surfaces.  Recall that we have
+have stated so far is that if \(D\) is a simply connected 
+region on an surface, \(M\), with boundary \(\partial D\) and with some 
+corners as shown in the figure here  then we have 
+the <b><i>basic Gauss-Bonnet Theorem</i></b>  
+$$
+\iint_D K\,dA + \int_{\partial D} \kappa\,ds + \sum_{j} \beta_j = 2\pi.
+$$
+Here 
+\begin{align*}
+	K&= \text{Gauss curvature of the surface}\\
+	dA&= \text{Area measure on surface}\\
+	\kappa&= \text{geodesic curvature of \(\partial D\)}\\
+	ds& = \text{arclength measure \(\partial D\)}\\
+	\beta_i &= \text{Exterior angle at the \(i\)-th corner of \(D\)}
+\end{align*}
+We will also what to use the interior angle \(\alpha_i\) of
+the \(i\)-th corner.  Then we have 
+$$
+\alpha_i + \beta_i = \pi.
+$$
+In the case where the surface is the usual plane \(\mathbb R^2\)
+(so that \(K\equiv 0\))
+and \(D\) is a triangle with straight sides, this just says that
+the sum of the interior angles is \(\pi\).  If \(D\) is a 
+convex region in \(\mathbb R^2\) with no corners, then 
+this  \(\int_{\partial D}\kappa\,ds = 2\pi\) reflecting that
+\(\int_{\partial D}\kappa\,ds\) is the total angle that the 
+sweeps through while moving around the boundary of 
+\(D\).  
+<br>
+<br> 
+
+We now want to take a surface with no boundary 
+and ``triangulate''  as in the pictures here.
+The reason for the quotes on triangulate is that the 
+domains in the decomposition do not have to be triangles, 
+what is important is that they are simply connected.  
+ <img src="pic3_3.png" alt="Genus 3 surface." style="float:right;width:250px;height:250px;"> 
+ <img src="pic3_2.png" alt="Torus" style="float:right;width:250px;height:250px;"> 
+So in the picture on the left, it is a strict triangulation in the sense
+that all the faces in the decomposition are triangles, in the torus
+to the right all the faces are rectangles. And the faces do not all have
+to have the same number of sides.  So it is ok of there are 
+triangles, rectangles, pentagons, etc. all in
+the same ``triangulation''. 
+<p>
+
+Let \(M\) be a compact oriented surface and let fix 
+a triangulation of \(M\).  Let 
+\begin{align*}
+	\mathcal V &= \text{The set of vertices of the triangulation,}\\
+	\mathcal E &= \text{The set of edges of the triangulation,}\\
+	\mathcal F &= \text{The set of faces of the triangulation,}
+\end{align*}
+and
+a triangulation of \(M\).  Let 
+\begin{align*}
+	V &= \#(\mathcal V)=\text{The number  of vertices in the triangulation,}\\
+	E &= \#(\mathcal E)= \text{The number of edges in the triangulation,}\\
+F &= \#(\mathcal F)= \text{The number of faces in the triangulation,}
+\end{align*}
+<br>  
+Anther numerical quantity related to the triangulation is
+the <b><i>degree</i></b> of a vertex.  This is the number of edges 
+that are on it.  It also tells us how many faces come together at 
+a vertex.
+<br>
+<br>
+<b>Proposition 1 .</b> <i>  Let \(p\) be a vertex.  Then the number
+of faces that are have is \(p\) as a vertex is \(\deg(p)\).
+That is
+$$
+\#\{ D\in \mathcal V: \text{\(p\) is a corner of \(D\)}\}= \deg(p).
+$$
+</i>
+
+
+ <img src="pic3_4.jpg" alt="Degrees" style="float:right;width:400px;height:150px;"> 
+<br>
+<br>
+<b>Problem 1.</b> Prove this.
+
+<br>
+<b>Solution:</b>
 <br>
 
-Before starting on this we review some vector calculus that will
-be used.
+ <video width="640" height="480" controls>
+  <source src="vid3_3.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+<br>
+<br>
+
+
+
+
+ <b>Proposition 2.</b> <i> If \(\deg(p)\) is the degree of the vertex \(p\)
+ then
+ $$
+ \sum_{p\in \mathcal V} \deg(p) = 2E.
+ $$
+ That is the sum of the degrees of the vertices is twice the number of
+ edges.
+ </i>
+<br>
 
 <br>
-<b>Problem 1:</b>
-Let \( \pmb \beta \colon [a,b] \to \mathbb R^3\) be a \( C^1\) curve.
-Than at points where \(\pmb \beta(t)\ne \mathbf 0\) show
-\[
-\frac d{dt} \| \pmb\beta (t) \| =\left( \frac{\pmb\beta(t)}{\|\pmb\beta(t)\|}\right) 
-\cdot \pmb \beta'(t)=\widehat{\pmb\beta}(t)\cdot \pmb\beta'(t).
-\]
-where \( \widehat{\pmb\beta}(t)\) is the unit vector in the direction
-of \(\pmb \beta(t)\).
+<b>Problem 2:</b>
+Prove this.
 
 <br>
 <b>Solution:</b>
@@ -58,6 +146,114 @@ of \(\pmb \beta(t)\).
   <source src="vid3_1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video><br>  
+<br>
+<br>
+
+For each face \(D\in \mathcal F\) (so \(D\) is a simply connected domain
+on the surface \(M\) let 
+$$
+\mathcal V_D = \text{The vertices, \(p\in \mathcal V\) that are on 
+\(D\).}
+$$
+and for each \(p\in \mathcal V_D\)  let 
+\begin{align*}
+\beta(p,D)&= \text{exterior angle of \(D\) at \(p\)}\\
+\alpha(p,D)&= \text{interior angle of \(D\) at \(p\)}
+\end{align*}
+Then by the Basic Gauss-Bonnet Formula for any \(D\in \mathcal F\) we have
+$$
+\iint_D K\,dA + \int_{\partial D} \kappa\,ds + \sum_{p\in \mathcal V_D}
+\beta(p,D)
+= 2\pi.
+$$
+<br>
+
+The idea now is to sum this over all \(D\in \mathcal F\).  As 
+the faces cover the surface \(M\) we have
+$$
+\sum_{D\in \mathcal F} \iint_DK\,dA = \iint_D K\,dA.
+$$
+<br>
+
+<b>Lemma 1.</b>  
+$$
+\sum_{D\in \mathcal F} \int_{\partial D} \kappa \,ds =0.
+$$
+<br> <b>Problem 3.</b> Prove this.
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+  <source src="vid3_2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+<br>
+<br>
+
+<b>Lemma 2</b>  
+$$
+\sum_{D\in \mathcal F} \bigg( \sum_{p\in \mathcal V_D} \beta(p,D)\bigg)= 2\pi(E-V).
+$$
+<br> <b>Problem 4.</b> Prove this.
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+  <source src="vid3_4.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+<br>
+<br>
+
+Recalling a formula above we have for all \(D\in \mathcal F\) 
+that by the Basic Gauss Bonnet Theorem the formula 
+$$
+\iint_D K\,dA + \int_{\partial D} \kappa\,ds + \sum_{p\in \mathcal V_D}
+\beta(p,D)
+= 2\pi
+$$
+holds.
+<br> 
+<b>Gauss-Bonnet Theorem.</b> <i>
+For a triangulated oriented surface \(M\) 
+$$
+\iint_M K\,dA = 2\pi( V-E+F).
+$$
+</i>
+
+<br> <b>Problem 5.</b> Prove this by summing the basic Gauss-Bonnet 
+formula over the collection of faces \(D\).
+<br>
+<b>Solution:</b>
+<br>
+
+ <video width="640" height="480" controls>
+  <source src="vid3_5.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><br>  
+<br>
+<br>
+
+Let us look a what 
+$$
+\iint_M K\,dA = 2\pi( V-E+F)
+$$
+tells us.  First it tells us that for all triangulations of \(M\) \(V-E+F\)
+always has the same value (\(=\frac1{2\pi}\iint_MK\,dA\)).  So on a sphere for
+any triangulation \(V-E+F=2\).  Likewise on a torus for any triangulation we
+have \(V-E+F=0\).  To prove this you just need to find one triangulation where
+\(V-E+F=0\) holds (I leave this to you) and then the Gauss-Bonnet Theorem tell
+us it will be the same for all triangulations.   And one a \(g\)-holed torus
+\(V-E+F = 2-2g\) holds for all triangulations.
+<br>
+
+The formula information when read in the other direction.  Fix a triangulation.
+Then for all metric, or if you like all embeddings of \(M\) into \(\mathbb R^3\)
+the integral \( \iint_DK\,dA= 2\pi(V-E+F)\).  Therefore if \(M\) is a 
+sphere, we always have \(\iint_DK\,dA=4\pi\).  For a torus it is
+always the case that \(\iint_D K\,dA=0\).  
 
 
 </p>
