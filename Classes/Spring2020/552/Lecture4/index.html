@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>The argument principle and residues a higher order poles.</title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+
+<h3>The argument principle and residues at higher order poles.</h3> 
+
+<i>
+These notes are set up so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+<br>
+<br>
+\(
+\newcommand{\Res}{\operatorname{Res}}
+\)
+
+
+We have seen that if \(f(z)\) has a simple pole at $z=a$, say
+$$
+f(z)= \frac{g(z)}{h(z)} 
+$$
+where \(h(a)=0\) and \(h'(a)\ne 0\) then the residue of \(f\) at
+\(z=a\) 
+$$
+\Res(f,a) = \frac{g(a)}{h'(a)} 
+$$
+<br>
+
+We have also seen that if 
+$f(z)$ has a root of order \(m\) at \(z=a\), then it can be written as
+$$
+f(z) = (z-a)^mf_0(z)
+$$
+where \(f_0(z)\) is analytic near \(a\) and \(f_0(a)\ne 0\). Cauchy
+noticed that these two facts could be put together to give 
+a nice result.
+<br>
+<br>
+
+<b>Proposition.</b> <i>
+Let \(f(z)\) have a zero of order \(m\) at \(z=a\).  Then 
+the function
+$$
+\frac{f'(z)}{f(z)} 
+$$
+has a simple pole at \(z=a\) and the residue is
+$$
+\Res\Big( \frac{f'}{f} , a\Big) = m.
+$$
+That is the residue of \( \dfrac{f'}{f}\) at \(z=a\) is the
+order of the zero of \(f\) at \(z=a\).
+</i>
+
+
+<b>Problem 1.</b> Prove this by writing \(f(z)\) as
+$$
+f(z) = (z-a)^m f_0(z)
+$$
+with \(f_0(a)\ne 0\) and computing \(\dfrac{f'}{f}\) and seeing that it
+has simple pole with the residue of \(m\).
+
+	<br>
+	<b>Solution:</b>
+	<br>
+	 <video width="640" height="480" controls>
+		   <source src="vid4_1.mp4" type="video/mp4">
+		   Your browser does not support the video tag.
+	 </video><br>  
+
+
+ Now let \(D\) be a bounded domain with nice boundary and let
+ \(f(z)\) be analytic on the \(D\) and boundary and assume
+ that \(f(z)\ne 0\) for \(z\) on \(\partial D\).  Then 
+ $$
+ \frac{f'(z)}{f(z)} 
+ $$
+ will be analytic on \(D\) expect at with isolated singularities 
+ at the zeros of \(f\).  
+If we now apply the residue theorem to this function the result
+is
+
+<b>Theorem (The argument principle)</b> <i>
+	Let \(f(z)\) be analytic on the closure of the bounded 
+	domain \(D\) and assume that \(f(z)\) has no zeros
+	on the boundary \(\partial D\).  Then
+	$$
+	\int_{\partial D} \frac{f'(z)}{f(z)} dz =
+	2\pi i (\text{the number of zeros of \(f(z)\) in \(D\)})
+	$$
+	where the zeros are counted with multiplicity. 
+	(That is a zero of order \(m\) is counted \(m\) times.)
+</i>
+<br>
+
+<b>Problem 2.</b>  Write out the details of this to
+make sure you understand them.
+<br>
+<br>
+
+
+	<br>
+	<b>Solution:</b>
+	<br>
+	 <video width="640" height="480" controls>
+		   <source src="vid4_2.mp4" type="video/mp4">
+		   Your browser does not support the video tag.
+	 </video><br>  
+
+
+
+The zeros of \(f(z)\) are the solutions to \(f(z)=0\).  There
+is nothing special about solving for \(0\),  we could have just
+as easily looked for solutions to \(f(z)=b\) for for some constant
+\(b\).  So a slightly more general version of the last theorem is
+<br>
+<br>
+
+
+<b>Theorem </b> <i>
+	Let \(f(z)\) be analytic on the closure of the bounded 
+	domain \(D\) and assume that \(f(z)=b\) has no solutions
+	on the boundary \(\partial D\).  Then
+	$$
+	\int_{\partial D} \frac{f'(z)}{f(z)} dz =
+	2\pi i (\text{number of solution of \(f(z)=b\)})
+	$$
+	where the solutions are counted with multiplicity. 
+	(That is the if \(f(a)=b\) then \(a\) is counted  \(m\) times
+	if \(f(z)-b\) has a zero of order \(m\).)
+</i>
+<br>
+
+<b>Problem 3.</b> Prove this.
+
+
+
+<br>
+
+
+	<br>
+	<b>Solution:</b>
+	<br>
+	 <video width="640" height="480" controls>
+		   <source src="vid4_3.mp4" type="video/mp4">
+		   Your browser does not support the video tag.
+	 </video><br>  
+
+<br><br>  
+
+So far we only have an easy to use formula for finding the residue
+of functions at simple poles.  So let take a small step toward messier
+and look at a pole of order \(2\).  So we have a function whose 
+Laurent expansion looks like
+$$
+	f(z)= \frac{c_{-2}}{(z-a)^2} + \frac{c_{-1}}{(z-a)} + c_0 + c_1(z-a)
+	+ c_2(z-a)^2 + \dots
+$$
+and our job is to compute the residue at \(z=a\), that is
+the coefficient \(c_{-1}\).  The idea to to clear of fractions
+by multiplying by \((z-a)^2\) and then use the same argument that
+we have used to find the coefficients of a Taylor's expansion.
+
+<b>Proposition.</b> <i>  With the setup we have just given, 
+the residue of \(f\) at \(z=a\) is
+$$
+\Res(f,a) = c_{-1} = \lim_{z\to a} \frac{d}{dz} \Big( (z-a)^2f(z)\big).
+$$
+</i>
+
+<b>Problem 4.</b> Prove this.
+
+
+
+	<br>
+	<b>Solution:</b>
+	<br>
+	 <video width="640" height="480" controls>
+		   <source src="vid4_4.mp4" type="video/mp4">
+		   Your browser does not support the video tag.
+	 </video><br>  
+
+
+
+
+</p>
+
+</table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
