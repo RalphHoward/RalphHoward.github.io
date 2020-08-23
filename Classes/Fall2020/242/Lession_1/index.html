@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Some basics about differential equatons.</title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+
+
+
+
+<h3>First order differential equations.</h3> 
+<br>
+
+We will first study differential equations of the form
+$$
+y' = f(x,y).
+$$
+To be more explicit $f(x,y)$ is a function of two real variables
+$x$ and $y$ and we will generally assume that the first
+partial derivatives of $f$ exists.  Then a function 
+$y(x)$ defined on the interval $(a,b)$, then it is a solution
+to the differential if and only if for each $x\in (a,b)$
+the value of the derivative \(y'(x)\) is given by
+$$
+y'(x) = f(x,y'(x)).
+$$
+We will also often use the Leibniz notation 
+$$
+\frac{dy}{dx} = f(x,y).
+$$
+<br>
+
+For example if the equation is
+$$
+y' = 1 + 2 x y
+$$
+and we have that \(y(1) = 3\)
+then we can compute the derivative $y'(1)$ by
+$$
+y'(1) = 1 + (1)(y(1)) = 1 + (1)(3) = 4.
+$$
+
+<br><br>
+<b>Problem:</b>
+For the equation 
+$$
+\frac{dy}{dx} = \frac{1+x}{1+y^4} 
+$$
+if \(y(-3) = -2\) find \(y'(-2)\).
+<br><br>
+
+<br>
+<b>Solution.</b>
+<center>
+<br>
+<video width="900" height="675" controls>
+<source src="vid1_1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></center><br>  
+
+
+To get a bit more of a feel for what a differential equation tell us,
+let us look at the special case of equations of the form
+$$
+\frac{dy}{dx} = f(y)
+$$
+That is the equation has no explicit dependence on the variable \(x\).
+Here is a variant of one we did in class.
+
+<br><br>
+<b>Problem:</b>
+For the differential equation 
+$$
+y' = 10 - y
+$$
+find all the constant solutions.  Then make rough sketches of the
+solutions with \(y(0) = 5\) and \(y(0) = 15\).  Finally for 
+the solution with \( y(0) = 12\) estimate \(y(100)\).
+<br><br>
+
+<br>
+<b>Solution.</b>
+<center>
+<br>
+<video width="900" height="675" con;trols>
+<source src="vid1_2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></center><br>  
+
+
+<br><br>
+<b>Problem:</b>
+Here is a slightly more complicated example.  For the equation
+$$
+\frac{dy}{dx} = .1 y \left( 10 - y\right)
+$$
+do the following.<br>
+(a) Find the constant solutions.<br>
+(b) Graph the constant solutions along with rough sketches of 
+the graphs of the solutions with \(y(0)=5\) and \(y(0)=15\).
+(c) For the solution with \(y(0)=8\) estimate \(y(50)\).
+<br><br>
+
+<br>
+<b>Solution.</b>
+<center>
+<br>
+<video width="900" height="675" controls>
+<source src="vid1_3.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></center><br>  
+
+
+</p>
+
+</table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
