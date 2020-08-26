@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Separable equations.</title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+	<h2> Lesson 2, Separable equations.</h2>
+<p>
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+
+Separable first order differential equations are ones of the form
+$$
+y'(x) = f(x) g(y(x)).
+$$
+These will also be written in the form
+$$
+y' = f(x) f(y)
+$$
+and the Leibniz notation
+$$
+\frac{dy}{dx} = f(x) g(y).
+$$
+Assume that we are on a set where \(g(y)\ne 0\) and that \(f\) and \(g\) are
+continuous the function \( f(x) \) and \( \dfrac{1}{g(y)} \) have
+anti-derivatives.  That is there are functions \(F(x)\) and \(G(y)\)
+with
+$$
+F'(x) = f(x)\qquad \text{and}\qquad G'(y) = \dfrac{1}{g(y)} 
+$$
+Let \(y(x)\) be a function such that 
+$$
+G(y(x)) = F(x) + c
+$$
+for some constant \(c\).  Then \(y(x)\) is a solution to the 
+differential equation \(y' = f(x) g(y)\).  To see this note that
+by the chain rule 
+$$
+\frac{d}{dx} G(y(x)) = G'(y(x)) y'(x) = \frac{1}{g(y(x))} y'(x)
+$$
+and therefore if we take \( \dfrac{d}{dx} \) of the equation
+\( G(y(x)) = F(x)\) 
+$$
+\frac{d}{dx} G(y(x)) = \frac{1}{g(y(x))} y'(x) = \frac{d}{dx} (F(x) + c) = F'(x) = f(x).
+$$
+That is
+$$
+ \frac{1}{g(y(x))} y'(x) = f(x)
+$$
+and multiplying by \(g(y(x)\) gives \(y'(x) = f(x) g(y(x))\) as required.
+<br>
+<br>
+Rather than remembering this we can derive the solution as follows.
+Write the equation in Leibniz notation
+$$
+\frac{dy}{dx} = f(x) g(y).
+$$
+Then formally we can cross multiply to get
+$$
+\frac{dy}{g(y)} = f(x)\,dx.
+$$
+Then just formally integrate
+$$
+\int \frac{dy}{g(y)} =\int  f(x)\,dx.
+$$
+Then the left side of this is an anti-derivative, \(G(y)\) of \( \dfrac{1}{g(y)} \)
+and the right side is an anti-derivative, \(F(x)\) of \(f(x)\) so, after including
+a constant of integration, we have the solution of the equation.  
+
+<br><br>
+<b>Problem:</b>
+Here is a first example.  Find both the general solution and the particular
+solution with \(y(1) = 5\) to the equation
+$$
+y'= (6x^2+ 2x) e^{3y}
+$$
+<br><br>
+
+<br>
+<b>Solution:</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+<br><br>
+<b>Problem:</b>
+Here is an example where you need to do some algebra before it becomes
+clear the equation is separable.  Find the general solution
+to 
+$$
+\frac{du}{dt} = 1 + t + u^2 + tu^2.
+$$
+<i>Hint:</i> Factor.
+<br><br>
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+
+
+
+</table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
