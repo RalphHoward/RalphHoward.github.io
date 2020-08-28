@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title> Greatest common divisors and the Euclidean algorthim. </title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+<br>
+
+
+<h2> Greatest common divisors and ideals.</h2>
+
+<br><br>
+<b>Definition:</b>
+Let \(a\) and \(b\) be integers not both zero.  Then 
+\(d\) is a <b>greatest common divisor</b>  of \(a\) and
+\(b\) if and only if
+<ul>
+	<li> \(d>0\)</li>
+	<li> \(d\) divides both \(a\) and \(b\). </li>
+	<li>if \(c\) divides both \(a\) and \(b\), then \(c\) divides \(d\). </li>
+</ul>
+
+<br><br>
+
+We have also defined:
+
+<br><br>
+<b>Definition:</b>
+A subset \(I\) of the integers \(\mathbb Z\) is an <b>ideal</b>  if and only if
+\(I \ne \varnothing\) and
+<ul>
+	<li>\(I\) is closed under addition. (That is if \(a,b\in I\)
+	then also \(a+b\in I\).</li>
+	<li> if \( a in I\) and \(n\in \mathbb Z\), then \(na \in I\). (That is
+	\(I\) is closed under multiplication by any element of \(\mathbb Z\).)</li>
+</ul>
+<br><br>
+
+If \(d\) is an integer then the set \(d\mathbb Z=\{nd: n \in \mathbb Z\}\)
+(that is \(d\mathbb Z\) is the set of all multiplies of \(d\)) is an example
+of an ideal.  The following shows that this is basically the only example.
+
+
+<br><br>
+<b>Theorem:</b><i>
+	If \(I\) is then either \(I = \{0\}\) or there is a \(d>0\)
+	such that \(I = d \mathbb Z\).
+</i><br><br>
+
+<b>Outline of proof.</b>  We have done this in class so here we only give
+the basic ideal of what is going on.  If \(I = \{0\}\), then
+we are done.  So assume \(I \ne \{0\})\).   Then, by the well ordering
+principle, \(I\) has a smallest positive element.  Call it \(d\). 
+Then \( d \in I\) and so for any \(\in \mathbb Z\) we have, by 
+the definition of an ideal, that \( nd \in I\).  Therefore
+\(d\mathbb Z \subseteq I\).
+<br>
+<br>
+
+Let \(a \in I\) and use the division algorithm do find in integers \(q\)
+and \(r\) with
+\[
+a = qd+r \quad 0 \le r \lt d.
+\]
+Then \( r = a +(-q)d\) and so by the basic closure properties of ideals \(r \in I\).
+Since \(0\le  r\lt d\) and \(d\) is the smallest positive element of $I$,
+	  this implies \(r=0\) and so \(a= qd\) is a multipple of \(d\),
+	  that is \(a \in d \mathbb Z\).  As \(a\) was an arbitary element
+of \(I\) we have \( I \subseteq d\mathbb Z\). <b>QED</b> 
+
+<br>
+<br>
+
+Here is an application of the last result to prove something that we will use
+many times during the course of the semester. 
+
+<br><br>
+<b>Theorem (gcd = linear combination.)</b><i>
+Let \(a\) and \(b\) be integers, not both zero.  Then the greatest
+common divisor of \(a\) and \(b\) exists and is an integral
+linear combination of \(a\) and \(b\). That is there are
+integers \(x\) and \(y\) such that 
+$$
+ax + by = \gcd(a,b).
+$$
+</i><br><br>
+
+
+<b>Outline of proof.</b>  This  is anther result we did in class so only the 
+bare bones of the argument will be give here.   Let
+$$
+I = \{ ax+ by: x,y \in \mathbb Z\} 
+$$
+be the set of all integral linear combinations of \(a\) and \(b\).  
+Then it is not hard to check that \(I\) is an ideal and that
+$$
+a = a\cdot 1 + b \cdot 0\in I \qquad \text{and}\qquad b = a\cdot 0 + b \cdot 1 \in I.
+$$
+By the previous theorem there is a \( d > 0\) such that \(I = d\mathbb Z\).
+<p>
+
+We now show that \(d = \gcd(a,b)\).  First not \(a,b\in I = d \mathbb Z\)
+and therefore each of \(a\) and \(b\) is a multiple of \(d\).  That is
+\(d\) divides each of \(a\) and \(b\).
+<p>
+
+Also from the definition \(I\) as the set of all integral linear combinations
+of \(a\) and \(b\) and because \(d \in I\) we see that there are integers \(x\) and \(y\) such 
+$$
+d = ax + by.
+$$
+Assume that \( c \mid a \) and \( c \mid b\).  Then there are
+integers \(a'\) and \(b'\) with \(a = ca'\) and \(b = c b'\).
+Then
+$$
+d = ax+by = ca'x + cb'y = c(a'x + b'y)
+$$
+which shows that \( c \mid d\).  Looking back at the definition
+of greatest common divisor we see \(d = \gcd(a,b)\).
+<b>QED</b>  
+
+<h2> The Euclidean algorithm and the greatest common divisor.</h2>
+
+There is a more concrete method of showing that \(gcd(a,b)\) can be
+written as an integral linear combination of \(a\) and \(b\) which goes
+back to Euclid.  It is based on
+
+<br><br>
+<b>Theorem:</b><i>
+	If \(a\) and \(b\) are integers with \(b\ne 0\) and
+	for some integers \(q\) and \(r\) we have
+	$$
+	a = qb | r
+	$$
+	then 
+	$$
+	\gcd(a,b) = \gcd(r,b).
+	$$
+</i><br><br>
+
+<br><br>
+<b>Problem:</b>
+Prove this.
+<br><br>
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/NGU1WpsWgas" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+
+Here is the how this is used to find the greatest common divisor of two positive integers.
+Starting with \(a\) and \(b\) assume \(b \le a\).  If \( b \mid a\) 
+then \( \gcd(a,b) = b\).
+
+	Then we divide \(b\)
+into \(a\) 
+	$$
+	a = qb + r \qquad \text{with \(0 \le r \lt b\)}.
+	$$
+Then we have just shown
+	$$
+	\gcd(a,b) = \gcd(b,r)
+	$$
+and we have \( r \lt b \le a\) so we have made one of the numbers
+involved in computing the GCD smaller.  Now divide \( r \) 
+into \( b \)
+$$
+b = q_2 r + r_2
+$$
+with \( 0 \le r_2 \lt r\) and
+$$
+\gcd(r_1,r) = \gcd(r,b) = \gcd(a,b),
+$$
+and we have reduced the problem to one with even smaller numbers.
+We continue in this manner until we get a remainder of \( 0 \) in 
+which case the GCD is the last divisor.   More formally this looks 
+like 
+\begin{align*}
+a&= bq_1 + r_1 &\text{with}& & 0 \le r_1  \lt b\\
+b&= bq_2 + r_2 &\text{with}& & 0 \le r_2  \lt r_1\\
+b&= bq_3 + r_3 &\text{with}& & 0 \le r_3  \lt r_2\\
+b&= bq_4 + r_4 &\text{with}& & 0 \le r_4  \lt r_3\\
+b&= bq_5 + r_5 &\text{with}& & 0 \le r_5  \lt r_4\\
+&&\text{until \(r_k=0\) }&&
+\end{align*}
+This method is the <b>Euclidean algorithm</b>.
+<br><br>
+<b>Problem:</b>
+Use the Euclidean algorithm to find \( \gcd(54,552)\).
+<br><br>
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/h1jq7KvhhJ4" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+</table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
