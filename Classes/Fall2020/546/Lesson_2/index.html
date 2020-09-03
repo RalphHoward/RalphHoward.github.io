@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>More on the Euclidean algorithm.</title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+<br>
+
+
+<h2> Bézout's Theorem and the Euclidean algorithm.</h2>
+
+$$
+\renewcommand{\mod}[1]{\ (\mathop{\rm mod} #1 )}
+$$
+One of our main results in the last week is:
+
+
+<br></br>
+<b> Bézout's Theorem (i.e. GCD is linear combination.)</b><i>
+Let \(a\) and \(b\) be integers, not both zero.  Then there are integers
+\(x\) and \(y\) such that
+$$
+ax + by = \gcd(a,b).
+$$
+</i><br><br>
+
+The text on pages 11-13 gives a nice method using a bit of elementary matrix theory 
+along with the Euclidean algorithm 
+which, given \(a\) and \(b\), both finds computes \(\gcd(a,b0\)
+and gives integers \(x\) and \(y\) such that \( ax+ by = \gcd(a,b)\).
+
+<br><br>
+<b>Problem:</b>
+Use the method of the text to find the greastest common divisor of 
+and \(a = 6643\) and  \(b= 2873\).  (This is a problem from the text.)
+<br><br>
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/d9gVQ0axbrg" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+One of the consequences of  Bézout's Theorem  that is important to us is
+
+<br><br>
+<b>Theorem:</b><i>
+Let \(a\) and \(b\) be integers.  Then \(a\) and \(b\) are relatively prime
+(that is \(\gcd(a,b)=1\) ) if and only if there are integers \(x\)
+and \(y\) such that
+$$
+ax+by = 1.
+$$
+</i><br><br>
+
+<b>Proof:</b>  One direction follows immediately from Bézout's Theorem:
+if \(\gcd(a,b) =1\) then  Bézout tells us that there are integers
+\(x\) and \(y\) with \(ax+by = 1\).  
+<p>
+
+Conversely if there are integers \(x\) and \(y\) with 
+\(ax+by = 1\) let \(d = \gcd(a,b\) with the goal of showing \(d=1\).
+Since \(d\) divides both \(a\) and \(b\) it divides the integral
+linear combination \(ax+by=1\).  But the only divisors of \(1\)
+are \(\pm 1\) and \(d\) is positive, therefore \(d=\gcd(a,b) =1\).
+<b>QED</b>  
+
+We are now going to apply this to the theory of congruences of numbers.
+If you need to, review the basic properties of 
+\( a \equiv b \mod n\).  
+
+<br><br>
+<b>Theorem:</b><i>
+Let \(n\) be a positive integer then the congruence 
+$$
+a x \equiv 1 \mod n
+$$
+has a solution if and only if \(\gcd(a,n)=1\).
+</i><br><br>
+
+
+
+<br><br>
+<b>Problem:</b>
+Prove this. <i>Hint:</i>  Use that \(\gcd(a,n)=1\) if and only if
+there are integers \(x\) and \(y\) with \( ax+by=1\).
+<br><br>
+
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/lzoY4JHHQZI" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+
+<br><br>
+<b>Problem:</b>
+	Solve the congruence 
+	$$
+	17 x \equiv 1 \mod {132}
+	$$
+<br><br>
+
+
+
+<br>
+<b>Solution.</b><br>
+
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/NoMwuqAOy9Q" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
