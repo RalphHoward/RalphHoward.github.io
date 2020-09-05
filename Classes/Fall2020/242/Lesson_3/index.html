@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Frist order lineaar equations.</title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+	<h2> Lesson 3, Some examples of first order linear equations.</h2>
+<p>
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+
+A <b>first order linear equation</b>  form 
+$$
+y' + p(x)y = f(x).
+$$
+Our method for solving them is to multiple the equation by
+$$
+\text{Integrating factor} = e^{\int f(x)\,dx}.
+$$
+Then the equation becomes
+$$
+\left( e^{\int p(x) \,dx} u\right)' = e^{\int p(x) \,dx} f(x)
+$$
+and we can integrate to get the solution.  
+
+
+<br><br>
+<b>Problem:</b>
+Find both the general solution and the solution with \(y(0)=3\) of
+$$
+y'+2xy = 4x
+$$
+<br><br>
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/yAhK0I-rYdY" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+
+So far we have mostly looked a problem where we can do the integral explicitly.
+If we have a function \(f(x)\) were we do not know how to compute
+\( \int f(x)\,dx \) then we can use the Fundamental Theorem of Calculus to
+get an anti-derivative.   That is we use that 
+$$
+\frac{d}{dx} \int_{x_0}^x f(x)\,dt = f(x).
+$$
+The next problem, which looks like just an easy variant on the problem above, 
+is an example where we have to use the Fundamental Theorem of Calculus
+to get our solution.
+
+<br><br>
+<b>Problem:</b>
+Find both the general solution and the solution with \(y(0)=3\) of
+$$
+y'+2xy = 4
+$$
+<br><br>
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/FtENPCht_6A" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+<br><br>
+<b>Problem:</b>
+Here is a problem where we have to do a (very little) bit of algebra to get the
+equation in the form to find the integrating factor.  Find both the general solution
+and the solution with \(u(0) = 2\) of the equation
+$$
+( 1+t^2) \frac{du}{dt} + 4t u = 12 t.
+$$
+<br><br>
+
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/IhQ3uEm1Nm0" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+
+</table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
