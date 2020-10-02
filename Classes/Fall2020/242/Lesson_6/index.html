@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Method of undermined coefficients.</title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+
+<h3>Method of undetermined coefficients for constant coefficient equations. </h3> 
+<br><br>
+
+
+We have seen that if \(y_1\) and \(y_2\) are linearly independent solutions
+to the linear homogeneous differential equation 
+$$
+L(y) := ay''+by'+cy=0
+$$
+where \(a\), \(b\), and \(c\) are constants then the general solution to
+this equation is
+$$
+y_c = c_1y_1 + c_2 .
+$$
+Then if we have a particular solution \(y\) to the inhomogeneous 
+equation
+$$
+L(y_p) = ay_p'' + by_p' + cy_p =f(x)
+$$
+then the general solution to the inhomogeneous is
+$$
+y = y_p + y_c.
+$$
+<br>
+<br>
+
+For some choices of \(f(x)\) we can make a educated guess for \(y_p\)  
+and reduce the problem to solve for some constants.  Here is a list of
+some \(f(x)\)  and the corresponding choice of \(y_p\). 
+<br>
+<br>
+<center>
+<table border="2" cellpadding="10">   
+	<tr> <td> \(f(x)\)</td> <td> \(y_p\) </td></tr>
+	<tr> <td> \(C\)</td> <td> \(A\) </td></tr>
+	<tr> <td> \(C_1x+C_0\)</td> <td> \(AX+B\) </td></tr>
+	<tr> <td> \(C_2x^2+C_1x+C_0\)</td> <td> \(AX^2+Bx+C\) </td></tr>
+	<tr> <td> \(C_nx^n + C_{n-1}x^{n-1} + \cdots + C_1x+C_0\)</td> <td> \(A_nx^n + A_{n-1}x^{n-1} + \cdots + A_1x+A_0\)</td> </td></tr>
+	<tr> <td> \(Ce^{ax}\)</td> <td> \(A e^{ax}\)</tr>		
+	<tr> <td> \(C_0 \cos(bx) + C_1 \sin(bx)\)</td> <td> \(A \cos(bx) + B \sin(bx)\) </td></tr>
+	<tr> <td> \(e^{ax}\big(C_0 \cos(bx) + C_1 \sin(bx)\big)\)</td> <td> \(e^{ax}\big(A \cos(bx) + B \sin(bx)\big)\) </td></tr>
+</table>
+</center>
+
+<br><br>
+<b>Problem:</b>
+Find a particular solution to 
+$$
+y''+ 2y' -4 y = 2x+1 + \cos(x).
+$$
+<br><br>
+
+
+</table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
