@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Method of variation of parameters.</title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+
+<h3>Lagrange's method of variation of parameters.</h3> 
+<br><br>
+
+This is a method of finding a solution to the 
+inhomogeneous equation
+$$
+y''+p(x) y' + q(x)y=f(x)
+$$
+assume that we have a linearly independent pair of solutions \(y_1\)
+\(y_2\) of 
+the homogeneous equation
+$$
+y'' + p(x) y' + q(x)y =0
+$$
+As you have verified in the homework if we set 
+$$
+y_p = u_1 y_1 + u_2 y_2
+$$
+where \(u_1\) and \(u_2\) are solutions to the pair of 
+equation 
+\begin{align*}
+u_1' y_1 + u_2'y_2&= 0\\
+u_1' y_1' + u_2'y_2'&=f(x)
+\end{align*}
+(the second of these is the result of plugging \(y_p\) into
+the equation and noticing that many terms cancel 
+because \(y_1\) and \(y_2\) are solutions to the homogeneous
+equation)
+then we can solve for \(u_1'\) and \(u_2'), then find \(u_1\) 
+and \(u_2\) by integration,  and then
+\( y_p = u_1 y_1 + y_2 y_2\) is a solution
+to  \( y''+p(x) y' + q(x)y=f(x)\).
+<br>
+<br>
+
+I find the notation a bit easier to deal with without the subscripts.
+So let \(\phi\) and \(\psi\) be linearly independent solutions
+to the homogeneous equations set 
+$$
+y=u\phi + v \psi
+$$
+where we choose \(u\) and \(v\) to be solutions to the 
+equations
+\begin{align*}
+\phi u'+\psi v'&=0\\
+\phi' u'+ \phi' v'&=f(x)
+\end{align*}
+then \(y\) is a solution to the inhomogeneous equation.  
+
+<br><br>
+<b>Problem:</b>
+As first example let us look at the problem I made such a mess
+of in class: find a particular solutions to
+$$
+y''-y = e^{2x}.
+$$
+<br><br>
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/zGjG-HfCcHE" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+<br><br>
+<b>Problem:</b>
+Find a particular solution to 
+$$
+y'' + 4y = 16 \sec(2x)
+$$
+<br><br>
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/dTr9A7B4TkY" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+We can formalize this process some.  The equations 
+\begin{align*}
+\phi u'+\psi v'&=0\\
+\phi' u'+ \phi' v'&=f(x)
+\end{align*}
+can be solved to get 
+$$
+u'= \frac{-f\psi}{W} , \qquad v' = \frac{f\phi}{W} 
+$$
+where
+$$
+W = \left| \begin{matrix}
+\phi&\psi\\ \phi'&\psi'
+\end{matrix}\right| = \phi\psi'-\phi'\psi
+$$
+is the Wronskian of the functions \(\phi\) and \(\psi\).  Thus
+\begin{align*}
+u&= \int \frac{-f\psi}{W}\,dx \\
+v&= \int  \frac{f\phi}{W} \,dx
+\end{align*}
+
+
+<br><br>
+<b>Problem:</b>
+Show that \(\phi=x^2\) and \(\psi x^3\) are linearly independent solutions
+to homogeneous equation
+$$
+x^2 y'' -4xy' + 6y=0
+$$
+and use them to find
+a particular solution the inhomogeneous equaton
+$$
+x^2 + y'' -4xy' + 6y = 6+12 x^2.
+$$
+<br><br>
+
+
+<br>
+<b>Solution.</b><br>
+
+<center>
+<iframe width="918" height="574"
+	src="https://www.youtube.com/embed/BpDEG4pn4Vg" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen>
+</iframe>
+</center>
+<br>
+
+</table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
