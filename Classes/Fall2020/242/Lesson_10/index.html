@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Two dimensional systems of differential equations</title>
+  <table  width=1000><td> <!-- setting width of whole page -->   
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+<i>
+These notes are set so that you get to prove the main results
+by solving smaller problems that when put together give the big result.
+The answers to the problems are in the videos.  
+You will get the most out of these notes if you do (or try) the problems
+before looking at the videos.
+</i>
+<br>
+
+<h3>The basics of systems of differential equations.</h3> 
+<br><br>
+
+A <i>system of differential equations</i>, as opposed to a single 
+differential equation is a set of more than one equation for
+more than one unknown functions.    Here we will mostly 
+consider sets of two equations for two unknown functions.  The
+most basic version of this is a system of the form
+\begin{align*}
+\frac{dx}{dt} &= f(t,x(t),y(t))\\
+\frac{dy}{dt} &= g(t,x(t),y(t))
+\end{align*}
+
+We first record the fact that such equations always have 
+solutions
+
+<br><br>
+<b>Theorem:</b><i> <i>(Existence and uniqueness for first order systems.) </i>  
+Assume the functions \(f(t,x,y)\) and \(t,x,y)\) have continuous
+first partial derivatives.  Then the for any \(t_0\) and
+numbers \(x_0\) and \(y_0\) the initial value problem 
+\begin{align*}
+\frac{dx}{dt} &= f(t,x(t),y(t)),&& x(t_0)=x_0\\
+\frac{dy}{dt} &= g(t,x(t),y(t)),&& y(t_0)=y_0
+\end{align*}
+has a unique solution.
+</i><br><br>
+
+(Note to any mathematician reading this:  I am aware that this 
+statement should be more precise about domains and that the solution
+is only necessarily defined on a neighborhood \(\{ t: |t-t_0|<
+\delta\}\) of \(t_0\).)
+<br><br>
+Those not interested in theory can skip ahead to the next section
+on <b>Dealing with autonomous systems graphically.</b>  
+<br>
+<br>
+
+To relate this back to equations we have looked at, consider
+the second order equations
+$$
+x''(t) + p(t)x'(t) + q(t) x(t) = f(t).
+$$
+If we introduce a variable for the derivative, that is
+let
+$$
+y(t) = x'(x)
+$$
+then
+$$
+y'(t) = x''(x).
+$$
+and we can rewrite the equation as
+$$
+y'(t) + p(t)y(t) + q(t) x(t) = f(t)
+$$
+Solving for \(y'(x)\) gives
+$$
+y'= -q(t)x(t) - p(x) y(t) + f(t).
+$$
+
+Putting this all together gives
+<br><br>
+<b>Theorem:</b><i>
+The second order initial value problem
+$$
+x''(x)+p(t)x'(t) + q(t)x(t) = f(t) \qquad x(t_0)=x_0,\quad x'(t_0) = y_0
+$$
+is equivalent to the first order system 
+\begin{align*}
+x'(t) &= y(y)&& x(t_0)=x_0\\
+y'(t) &= -q(t)x(t) - p(x) y(t) + f(t)&&y(t_0)=y_0.
+\end{align*}
+</i><br><br>
+
+The point of this is that we can use the 
+Existence and uniqueness for first order systems
+to see that we also have unique solutions for 
+second order differential equations. (But this
+is probably mostly interesting to people, such
+as mathematicians, that wish to unify the theory
+and to some people writing computer programs for 
+solving differential equations so that they can write
+programs that cover the widest number of types of equations.)
+<br>
+
+<h3> Dealing with autonomous systems graphically.</h3>
+<br>
+
+The system is <i>autonomous</i>  if and only if the variable \(t\)
+is not explicitly in the equations.  That is it is of form
+\begin{align*}
+\frac{dx}{dt} &= f(x(t),y(t)),&& x(t_0)=x_0\\
+\frac{dy}{dt} &= g(x(t),y(t)),&& y(t_0)=y_0
+\end{align*}
+Which we will usually write in the more compact form
+\begin{align*}
+\frac{dx}{dt} &= f(x,y),&& x(t_0)=x_0\\
+\frac{dy}{dt} &= g(x,y),&& y(t_0)=y_0
+\end{align*}
+or even 
+\begin{align*}
+\dot x &= f(x,y),&& x(t_0)=x_0\\
+\dot y &= g(x,y),&& y(t_0)=y_0
+\end{align*}
+where the dot notation, which goes back to Issac Newton, is
+used to denote the derivative with respect to \(t\) (which is
+generally though of as time).
+<br>
+<br>
+
+An autonomous system has a pleasant geometric interpolation.
+On the plane consider the vector field
+$$
+\mathbf v(x,y) = f(x,y)\,\mathbf i + g(x,y)\,\mathbf j.
+$$
+Then if \((x,y)\) = \((x(t),y(t))\) is a solution to the 
+system
+\begin{align*}
+\dot x &= f(x,y)\\
+\dot y &= g(x,y)
+\end{align*}
+the curve
+$$
+\mathbf c(t) = (x(t),y(t))
+$$
+has $\mathbf v$ as its velocity vector at each point. That is
+$$
+\dot{\mathbf c}(t)= \mathbf v(\mathbf c(t)) = \mathbf v(x(t),y(t)). 
+$$
+To see this in action let us consider the systemm
+\begin{align*}
+\dot x &= -2 x + y\\
+\dot y &= x - 3y 
+\end{align*}
+Go to the website 
+<br>
+<br>
+<a href="https://homepages.bluffton.edu/~nesterd/apps/slopefields.html"
+		target="_blank">
+	https://homepages.bluffton.edu/~nesterd/apps/slopefields.html</a>
+<br>
+<br>
+and click on the tab that which is labeled <b>System</b>. 
+You should something that looks like:
+<br>
+
+<center>
+ <img src="systems1.png" alt="picture of ode plotter." width="900" > 
+</center>
+ <br>
+
+ This is for the default  system on the site which is
+\begin{align*}
+\dot x &= x+y \\
+\dot y &=  xy-1
+\end{align*}
+
+To change the system to the one we are after 
+edit the formulas for \(dx/dt\)
+and \(dy/dt\) to  our functions (\(-2x+y\) and \(x-3y\)).
+The picture now looks like
+
+<br>
+
+<center>
+ <img src="systems2.png" alt="picture of ode plotter." width="900" > 
+</center>
+ <br>
+
+The arrows point in the direction that a solution to the equation
+will be moving.  Now let us plot a couple of solutions.  
+To start let us look at the solution with
+$$
+x(0)=2, \qquad y(0)=-1
+$$
+Click on the <b>PLOT NUMERICAL SOLUTION CURVES</b>  
+and where it says <i>enter (x,y)</i>  
+enter \( (2,-1)\) and click on <b>submit</b>    Things should now look like:
+
+
+
+<br>
+
+<center>
+ <img src="systems3.png" alt="picture of ode plotter." width="900" > 
+</center>
+ <br>
+
+The red curve is the track of the solution starting at \((2,-1)\)
+and shows that if is ``pushed'' by the arrows to the origin.  
+If we plot anther initial condition, say
+$$
+x(0)= -2,\qquad y(0)=2.5
+$$
+we get both solutions (the second one in green) on the graph:
+
+<br>
+
+<center>
+ <img src="systems4.png" alt="picture of ode plotter." width="900" > 
+</center>
+ <br>
+
+Here is a more interesting example.  We look at the system
+\begin{align*}
+\frac{dx}{dt} &=y\\
+\frac{dy}{d} &= -\sin(2x)
+\end{align*}
+and let us plot the solutions with initial conditions
+$$
+(x(0),y(0)) = (1,0),\qquad (x(0),y(0))=(.2,-.3),\qquad 
+(x(0),y(0)= (-3,2).
+$$
+Before plotting click on the bottom that says
+<b>Euler</b>  and change it to <b>Improved Euler (Heun)</b>  
+The result should look like
+
+
+<br>
+
+<center>
+ <img src="systems5.png" alt="picture of ode plotter." width="900" > 
+</center>
+ <br>
+
+If it does not and yu have some red and green spirals running off
+of the graph, then that most likely means you did not change 
+the <b>Euler</b>  to <b>Improved Euler (Heun)</b>. 
+
+<br><br>
+<b>Problem:</b>
+For the system 
+\begin{align*}
+\frac{dx}{dt} &=y\\
+\frac{dy}{dt} &= \sin(2x) - . 1 y
+\end{align*}
+with the four initial conditions 
+$$
+(x(0),y(0)) = (1,0),\qquad (x(0),y(0))=(-.2,-.3),\qquad 
+(x(0),y(0)= (-3,2),\qquad (x(0),y(0)) = (1,-2)
+$$
+using <b>Improved Euler (Heun)</b>. 
+You can save the image by clicking
+on the <b>To save the image, right-click this thumbnail </b>  
+bottom.  Your homework is to save the graph and e-mail me a copy
+midnight by Friday, November 13.  
+
+<br><br>
+
+  </table> <!-- ending width of whole page --> 
+</body>
+</html>
+
+
