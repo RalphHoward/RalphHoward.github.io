@@ -1,0 +1,62 @@
+\documentclass{article}  % Tell LaTeX what type of document we are making.
+                         % Percent signs are used for comments and what is
+                         % to the right of them is ignored.
+
+
+
+
+\begin{document}  %  Start the document.
+
+
+Hello world.   
+
+
+
+Ordinary text (that is non mathematical text) is just typed
+as usual ordinary text.  But LaTeX will decide where the line
+breaks are.
+
+A new paragraph is started by leaving one or more blank lines.
+
+So this is a new paragraph.
+
+
+% Mathematical formulas in a line are put between \(  and \)
+
+The basic quadratic equation is \(ax^2 + bx + c =0\).  
+
+
+% Displayed mathematical formulas are put between \[ and \]
+
+This can be done in one line \[ ax^2+bx+c=0. \]
+But it is usually easier to read your code if you make it look
+displayed 
+\[
+  ax^2+bx+c=0.
+\]
+(LaTeX will not care, but if you are looking at your code a month after
+writing it you will.)
+
+Let us give a slightly more complicated displayed equation
+which gives a good idea of what general LaTeX looks like:
+\[
+	x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}.
+\]
+
+A basic formula in much of analysis is the sum of a geometric 
+series
+\[
+   \frac{a}{1-r}= a+ar + ar^2 + ar^3 + ar^4+ \cdots = \sum_{n=0}^\infty ar^n
+\]
+which converges for $|r|<1$.
+Thus if
+\[
+	S = 3 + 3 x + 3 x^2 + 2 x^3 + \cdots = \sum_{n=0}^\infty 3x^n
+\]
+we have
+\[
+      S =   \frac{3}{1-x} 
+\]
+
+\end{document}
+

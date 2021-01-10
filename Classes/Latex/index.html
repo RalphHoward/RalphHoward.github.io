@@ -1,4 +1,3 @@
-..
 <html>
 <head><title>LaTeX Basics</title></head> 
 <body>
@@ -21,13 +20,14 @@ recipient.
 
 
 If you already know how to produce a LaTeX document, you can 
-ignore most of the instructions here.  
+ignore most of the instructions here.  If you are new to LaTeX
+here is how to use Overleaf to produce a LaTeX document.
 
 
 <p><p><p>
 Step 1: Getting started. <br>
 
-<li><b>Using your school email address</b>, register for a 
+<li> Register for a 
 (free) Overleaf account by going to  
 <a href="https://www.overleaf.com/register">Overleaf/register</a>. 
 
@@ -54,27 +54,18 @@ Step 2: Your first Latex Project<br>
 <font size=1>(left column  tool bar with green background)</font>, 
 and then from the drop down selection chose  <tt>Blank Project</tt>.
 <br>  
-A window should pop up asking you to  name your New Project.
-"Latex 1" is a reasonable name.
+A window should pop up asking you to name your New Project.
+Let us use no originality (and avoid offending the computer gods)
+and call the first project "Hello World" 
 <br>
 
 
 
 Delete the code in the source window and 
 take the following code and cut and paste it into Overleaf (or
-whatever you are using for LaTeX) and edit it to complete the 
-following three lines:
-<br>
-My name is
-<br>
-My major is
-<br>
-S=
-<br>
-
-Then compile it and send the resulting pdf to me with the 
-subject line: LaTeX 1.
-
+whatever you are using for LaTeX) and paste  in
+(or better yet
+type it in yourself) the following:
 
 <pre>
 \documentclass{article}  % Tell LaTeX what type of document we are making.
@@ -84,7 +75,7 @@ subject line: LaTeX 1.
 \begin{document}  %  Start the document.
 
 
-Hello world.   (Included so as to not offend the Computer Gods.)
+Hello world.   
 
 
 
@@ -94,9 +85,8 @@ breaks are.
 
 A new paragraph is started by leaving one or more blank lines.
 
-My name is 
+So this is a new paragraph.
 
-My major is 
 
 % Mathematical formulas in a line are put between \(  and \)
 
@@ -132,12 +122,16 @@ Thus if
 \]
 we have
 \[
-  S =     %  You fill this in.
+      S =   \frac{3}{1-x} 
 \]
 
-\end{document}
+\end{document}  % This tells LaTeX we are done.
 
 </pre>
+
+
+The output of this should look like <a href="example1.pdf">click here to
+	see it.</a>
 
 A point that is confusing at first is
 that in LaTeX there are several ways to do the same thing.  For
@@ -169,7 +163,7 @@ a x^2 + bx + c
 </pre>
 give the same output.  So in some of the videos recommended 
 below things will look a bit different than what I have above.
-You and use whatever you find easiest for you.
+You and use whatever you find easiest.
 </ul>
 
   
